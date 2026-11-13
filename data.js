@@ -34,7 +34,7 @@ window.sobhaData = {
     { label: "Design Vision", value: "Designed as a “Global Indian District” with grand central greens & serene lake buffer" },
     { label: "Configurations", value: "1 BHK (734 sqft), 2 BHK (1063 sqft), 3 BHK (1510 & 1830 sqft), 4 BHK (2091 & 2415 sqft)" },
     { label: "Pricing Range", value: "₹1.12 Cr to ₹3.90 Cr* (1 BHK from ₹1.12 Cr*, 2 BHK from ₹1.60 Cr*, 3 BHK from ₹2.30 Cr*, 4 BHK from ₹3.15 Cr*)" },
-    { label: "Signature Amenities", value: "Private Cricket Stadium 🏏, 120000 sqft Grand Clubhouse, Central Plaza (1000+ capacity), Mega Sports Arena, 350-meter Running Track, Dedicated Pet Parks 🐾" },
+    { label: "Signature Amenities", value: "Private Cricket Stadium, 120000 sqft Grand Clubhouse, Central Plaza (1000+ capacity), Mega Sports Arena, 350-meter Running Track, Dedicated Pet Parks" },
     { label: "Township Features", value: "High-street retail, commercial hubs, wide boulevards & multiple grand clubhouses" },
     { label: "Strategic Location", value: "Hoskote Junction (2 mins), STRR / Airport Road (5–10 mins), KR Puram (10 mins), Whitefield Metro (15 mins), Airport (25–30 mins), Marathahalli / Bellandur (35–40 mins)" },
     { label: "Target Audience", value: "Families seeking a premium long-term lifestyle & smart investors targeting early-stage appreciation backed by SOBHA" }
@@ -43,8 +43,8 @@ window.sobhaData = {
     "Sprawling 360-acre integrated township — Phase 1: 48 acres of premium development.",
     "Iconic high-rise tower structure: 3B + Ground & 1st floor car parking + 46 floors.",
     "~3,500 thoughtfully planned residences surrounded by grand central greens, serene lake buffer & lush landscapes.",
-    "120000 sqft Grand Clubhouse, Private Cricket Stadium 🏏, Mega Sports Arena & 350-meter Running Track.",
-    "Designed as a “Global Indian District” featuring Central Plaza (1000+ capacity), dedicated pet parks 🐾 & wide boulevards.",
+    "120000 sqft Grand Clubhouse, Private Cricket Stadium, Mega Sports Arena & 350-meter Running Track.",
+    "Designed as a “Global Indian District” featuring Central Plaza (1000+ capacity), dedicated pet parks & wide boulevards.",
     "High-street retail, commercial hubs & seamless connectivity to East Bengaluru's next growth hub."
   ],
   perfectFor: [
@@ -248,28 +248,28 @@ window.sobhaData = {
   ],
   amenitySlides: [
     { src: "assets/curved-clubhouse.webp", title: "120000 sqft Grand Clubhouse", alt: "120000 sqft Grand Clubhouse at Sobha One World" },
-    { src: "assets/club-pool.webp", title: "Private Cricket Stadium 🏏", alt: "Private Cricket Stadium at Sobha One World" },
+    { src: "assets/club-pool.webp", title: "Private Cricket Stadium", alt: "Private Cricket Stadium at Sobha One World" },
     { src: "assets/lap-pool.webp", title: "Mega Sports Arena & 350m Running Track", alt: "Mega Sports Arena and 350-meter running track" },
-    { src: "assets/waterfall-pool.webp", title: "Grand Central Greens & Lake Buffer 🌿", alt: "Serene lake buffer and grand central greens" },
+    { src: "assets/waterfall-pool.webp", title: "Grand Central Greens & Lake Buffer", alt: "Serene lake buffer and grand central greens" },
     { src: "assets/skylit-lounge.webp", title: "Central Plaza (1000+ Capacity)", alt: "Central Plaza with 1000+ person gathering capacity" },
-    { src: "assets/club-lounge.webp", title: "Dedicated Pet Parks 🐾", alt: "Dedicated pet parks for pet-friendly township living" },
+    { src: "assets/club-lounge.webp", title: "Dedicated Pet Parks", alt: "Dedicated pet parks for pet-friendly township living" },
     { src: "assets/gym.webp", title: "Global Indian District Boulevard", alt: "High-street retail, commercial hubs and wide boulevards" }
   ],
   amenityGroups: [
     {
       category: "TOWNSHIP & RECREATION",
       icon: "clubhouse",
-      pills: ["120000 sqft Grand Clubhouse", "Central Plaza (1000+ capacity)", "Dedicated Pet Parks 🐾", "High-Street Retail", "Commercial Hubs", "Wide Boulevards", "Multiple Grand Clubhouses"]
+      pills: ["120000 sqft Grand Clubhouse", "Central Plaza (1000+ capacity)", "Dedicated Pet Parks", "High-Street Retail", "Commercial Hubs", "Wide Boulevards", "Multiple Grand Clubhouses"]
     },
     {
       category: "SPORTS & ATHLETICS",
       icon: "sports",
-      pills: ["Private Cricket Stadium 🏏", "Mega Sports Arena", "350-meter Running Track", "Sports Zones", "Outdoor Fitness Areas"]
+      pills: ["Private Cricket Stadium", "Mega Sports Arena", "350-meter Running Track", "Sports Zones", "Outdoor Fitness Areas"]
     },
     {
       category: "NATURE & ENVIRONMENT",
       icon: "landscape",
-      pills: ["Grand Central Greens 🌿", "Serene Lake Buffer", "Lush Landscapes", "360-Acre Master Township", "48-Acre Phase 1 Development"]
+      pills: ["Grand Central Greens", "Serene Lake Buffer", "Lush Landscapes", "360-Acre Master Township", "48-Acre Phase 1 Development"]
     }
   ],
   projectGallery: [
@@ -393,8 +393,8 @@ window.sobhaData = {
     { icon: "01", title: "Sprawling 360-Acre Township", text: "Phase 1 spans 48 acres of premium development with ~3,500 thoughtfully planned residences." },
     { icon: "02", title: "3B + G & 1st Floor Parking + 46 Floors", text: "Tower structure designed with 3 basements, ground & 1st floor car parking, and 46 residential floors." },
     { icon: "03", title: "120,000 Sqft Grand Clubhouse", text: "Multiple grand clubhouses, sports zones, lifestyle amenities, and an expansive 120,000 sqft main clubhouse." },
-    { icon: "04", title: "Private Cricket Stadium & Sports Arena", text: "Features a Private Cricket Stadium 🏏, Mega Sports Arena, and a 350-meter running track." },
-    { icon: "05", title: "Central Plaza & Pet Parks", text: "Designed as a “Global Indian District” with Central Plaza (1000+ capacity) and dedicated pet parks 🐾." },
+    { icon: "04", title: "Private Cricket Stadium & Sports Arena", text: "Features a Private Cricket Stadium, Mega Sports Arena, and a 350-meter running track." },
+    { icon: "05", title: "Central Plaza & Pet Parks", text: "Designed as a “Global Indian District” with Central Plaza (1000+ capacity) and dedicated pet parks." },
     { icon: "06", title: "Grand Central Greens & Lake Buffer", text: "Abundant green spaces, serene lake buffer & lush landscapes with high-street retail and commercial hubs." }
   ],
   masterplanNotes: [
@@ -408,11 +408,11 @@ window.sobhaData = {
     },
     {
       title: "Private Cricket Stadium & Mega Sports Arena:",
-      text: "Private Cricket Stadium 🏏, Mega Sports Arena, and a 350-meter Running Track for township athletes."
+      text: "Private Cricket Stadium, Mega Sports Arena, and a 350-meter Running Track for township athletes."
     },
     {
       title: "Serene Lake Buffer & Dedicated Pet Parks:",
-      text: "Grand central greens, serene lake buffer, dedicated pet parks 🐾, and wide boulevards for seamless living."
+      text: "Grand central greens, serene lake buffer, dedicated pet parks, and wide boulevards for seamless living."
     }
   ],
   specifications: [
@@ -426,11 +426,11 @@ window.sobhaData = {
     },
     {
       category: "CLUBHOUSE & SPORTS AMENITIES",
-      text: "120000 sqft Grand Clubhouse, Private Cricket Stadium 🏏, Mega Sports Arena, 350-meter running track, and multiple lifestyle zones."
+      text: "120000 sqft Grand Clubhouse, Private Cricket Stadium, Mega Sports Arena, 350-meter running track, and multiple lifestyle zones."
     },
     {
       category: "COMMUNITY & RETAIL",
-      text: "Central Plaza with 1000+ capacity, dedicated pet parks 🐾, high-street retail, commercial hubs, and wide boulevards."
+      text: "Central Plaza with 1000+ capacity, dedicated pet parks, high-street retail, commercial hubs, and wide boulevards."
     },
     {
       category: "LANDSCAPE & GREENS",
@@ -472,7 +472,7 @@ window.sobhaData = {
     },
     {
       question: "What are the major amenities provided in the township?",
-      answer: "Key amenities include a Private Cricket Stadium 🏏, 120,000 sqft Grand Clubhouse, Central Plaza (1000+ capacity), Dedicated Pet Parks 🐾, Mega Sports Arena, 350-meter Running Track, grand central greens, serene lake buffer, high-street retail, and commercial hubs."
+      answer: "Key amenities include a Private Cricket Stadium, 120,000 sqft Grand Clubhouse, Central Plaza (1000+ capacity), Dedicated Pet Parks, Mega Sports Arena, 350-meter Running Track, grand central greens, serene lake buffer, high-street retail, and commercial hubs."
     },
     {
       question: "How is the connectivity from Sobha One World?",
