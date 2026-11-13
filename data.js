@@ -137,14 +137,13 @@ window.sobhaData = {
   floorPlans: [
     {
       tabName: "1 BHK",
-      name: "1 BHK Residence",
+      name: "1 BHK Luxury Residence",
       headline: "1 BHK — 734 sqft: thoughtfully planned living",
       description: "An efficiently conceived modern residence with sunlit living and dining, comfortable bedroom suite, modern bath, and private viewing balcony.",
       saleable: "734 sqft",
       carpet: "734 sqft",
       price: "₹1.12 - 1.20 Cr*",
-      image: "assets/4bhk-floor-plan-01-ground-first.webp",
-      secondImage: "assets/4bhk-floor-plan-01-second-third.webp",
+      image: "assets/1bhk-floor-plan.svg",
       bullets: [
         "734 sqft thoughtfully planned layout",
         "Phase 1: 48 acres of premium development",
@@ -153,14 +152,13 @@ window.sobhaData = {
     },
     {
       tabName: "2 BHK",
-      name: "2 BHK Residence",
+      name: "2 BHK Luxury Residence",
       headline: "2 BHK — 1063 sqft: spacious & comfortable living",
       description: "A well-proportioned two-bedroom residence crafted for modern families, featuring wide living-dining zones, two bathrooms, and panoramic balcony views.",
       saleable: "1063 sqft",
       carpet: "1050 - 1063 sqft",
       price: "₹1.60 - 1.70 Cr*",
-      image: "assets/4bhk-floor-plan-02-ground-first.webp",
-      secondImage: "assets/4bhk-floor-plan-02-second-third.webp",
+      image: "assets/2bhk-floor-plan.svg",
       bullets: [
         "1063 sqft ergonomic two-bedroom floor plan",
         "Overlooking grand central greens, serene lake buffer & lush landscapes",
@@ -168,35 +166,63 @@ window.sobhaData = {
       ]
     },
     {
-      tabName: "3 BHK",
-      name: "3 BHK (+2T & +3T) Residences",
-      headline: "3 BHK — 1510 & 1830 sqft: executive family living",
-      description: "Expansive three-bedroom homes available in 3 BHK + 2T (1510 sqft) and 3 BHK + 3T (1830 sqft) configurations with spacious living rooms and wide balconies.",
-      saleable: "1510 & 1830 sqft",
-      carpet: "1510 & 1830 sqft",
-      price: "₹2.30 - 2.90 Cr*",
-      image: "assets/4bhk-floor-plan-03-ground-first.webp",
-      secondImage: "assets/4bhk-floor-plan-03-second-third.webp",
+      tabName: "3 BHK + 2T",
+      name: "3 BHK + 2T Luxury Residence",
+      headline: "3 BHK + 2T — 1510 sqft: premium family layout",
+      description: "Expansive three-bedroom residence with 2 elegant bathrooms, expansive living-dining hall, modular kitchen utility, and an open balcony overlooking central greens.",
+      saleable: "1510 sqft",
+      carpet: "1510 sqft",
+      price: "₹2.30 - 2.40 Cr*",
+      image: "assets/3bhk-2t-floor-plan.svg",
       bullets: [
-        "3 BHK + 2T: 1510 sqft · ₹2.30 - 2.40 Cr*",
-        "3 BHK + 3T: 1830 sqft · ₹2.75 - 2.90 Cr*",
+        "1510 sqft spacious 3 Bed + 2 Toilets configuration",
+        "Optimal natural cross-ventilation and sunlit living spaces",
         "Close proximity to Central Plaza (1000+ capacity) and Mega Sports Arena"
       ]
     },
     {
-      tabName: "4 BHK",
-      name: "4 BHK Luxe & Grande (2 Car Park)",
-      headline: "4 BHK — 2091 & 2415 sqft: palatial living with 2 car parks",
-      description: "The premier residences at Sobha One World: 4 BHK Luxe (2091 sqft) and 4 BHK Grande (2415 sqft), each including 2 dedicated car parks.",
-      saleable: "2091 & 2415 sqft",
-      carpet: "2091 & 2415 sqft",
-      price: "₹3.15 - 3.90 Cr*",
-      image: "assets/5bhk-floor-plan-ground-first.webp",
-      secondImage: "assets/5bhk-floor-plan-second-third.webp",
+      tabName: "3 BHK + 3T",
+      name: "3 BHK + 3T Executive Residence",
+      headline: "3 BHK + 3T — 1830 sqft: executive luxury living",
+      description: "Grand 3-bedroom residence with 3 attached bathrooms, dedicated foyer, large entertainer balcony, and expansive master bedroom suite.",
+      saleable: "1830 sqft",
+      carpet: "1830 sqft",
+      price: "₹2.75 - 2.90 Cr*",
+      image: "assets/3bhk-3t-floor-plan.svg",
       bullets: [
-        "4 BHK Luxe: 2091 sqft · ₹3.15 - 3.40 Cr* (2 car park)",
-        "4 BHK Grande: 2415 sqft · ₹3.65 - 3.90 Cr* (2 car park)",
-        "Panoramic 360-degree views, serene lake buffer & Private Cricket Stadium access"
+        "1830 sqft grand 3 Bed + 3 Toilets executive suite",
+        "All bedrooms with dedicated bathroom access and premium fittings",
+        "Unobstructed views across 360-acre integrated township greens"
+      ]
+    },
+    {
+      tabName: "4 BHK Luxe",
+      name: "4 BHK Luxe Suite (2 Car Park)",
+      headline: "4 BHK Luxe — 2091 sqft: palatial living with 2 car parks",
+      description: "Signature four-bedroom residence with expansive double-volume living spaces, 2 dedicated car parking bays, and bespoke finishes crafted to Sobha's highest standards.",
+      saleable: "2091 sqft",
+      carpet: "2091 - 2100 sqft",
+      price: "₹3.15 - 3.40 Cr*",
+      image: "assets/4bhk-luxe-floor-plan.svg",
+      bullets: [
+        "2091 sqft luxury 4-bedroom palatial layout",
+        "Includes 2 dedicated covered car parking spaces",
+        "Panoramic township views, serene lake buffer & Private Cricket Stadium access"
+      ]
+    },
+    {
+      tabName: "4 BHK Grande",
+      name: "4 BHK Grande Suite (2 Car Park)",
+      headline: "4 BHK Grande — 2415 sqft: ultimate township penthouse suite",
+      description: "The largest ultra-luxury high-rise residence at Sobha One World: 2415 sqft of opulent space, expansive wrap-around deck, 2 dedicated car parking bays, and unmatched privacy.",
+      saleable: "2415 sqft",
+      carpet: "2400 - 2415 sqft",
+      price: "₹3.65 - 3.90 Cr*",
+      image: "assets/4bhk-grande-floor-plan.svg",
+      bullets: [
+        "2415 sqft maximum-dimension 4-bedroom grande suite",
+        "Includes 2 dedicated covered car parking spaces",
+        "Exclusive sky-living experience in G+46 sovereign high-rise tower"
       ]
     }
   ],
