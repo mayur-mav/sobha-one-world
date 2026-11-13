@@ -1587,7 +1587,7 @@
         source = "Virtual Tour Booking";
       } else if (btn.classList.contains("spec-quote-btn")) {
         title = "Get The Complete Price List";
-        subtitle = "Current Sobha One World price breakdown starting from ₹1.09 Cr* on WhatsApp.";
+        subtitle = "Current Sobha One World price breakdown starting from ₹1.12 Cr* on WhatsApp.";
         submitText = "Get Price List";
         source = "Specs Quote";
       } else if (btn.classList.contains("nav-cta")) {
