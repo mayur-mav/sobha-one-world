@@ -134,6 +134,15 @@ iframe { display: block; max-width: 100%; }
   -webkit-touch-callout: none !important;
 }
 ::selection { color: #ffffff; background: #2c2822; }
+section[id],
+.section[id],
+[id="faq"],
+[id="pricing"],
+[id="location"],
+[id="floor-plans"],
+[id="amenities"] {
+  scroll-margin-top: 88px;
+}
 .page-width { width: min(var(--page-width), calc(100% - 48px)); margin-inline: auto; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; clip-path: inset(50%); }
 .skip-link { position: fixed; z-index: 1100; top: 10px; left: 10px; padding: 10px 15px; transform: translateY(-150%); color: var(--white); background: var(--royal-blue-deep); }
@@ -205,6 +214,17 @@ iframe { display: block; max-width: 100%; }
   color: #ffffff;
   line-height: 1.1;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+.brand-builder {
+  font-family: var(--serif);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #dfb76c !important;
+  background: linear-gradient(135deg, #ffe0a3 0%, #dfb76c 50%, #c5a059 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  text-shadow: none;
 }
 .brand-godrej-logo,
 .brand-sobha-logo {
@@ -364,12 +384,12 @@ iframe { display: block; max-width: 100%; }
 .hero-image {
   object-fit: cover;
   object-position: center 42%;
-  filter: brightness(1.12) contrast(1.04) saturate(1.06);
+  filter: brightness(1.28) contrast(1.06) saturate(1.12);
 }
 .hero-shade {
   background:
-    linear-gradient(90deg, rgba(17, 16, 14, 0.68) 0%, rgba(24, 21, 18, 0.46) 38%, rgba(28, 25, 21, 0.16) 65%, transparent 100%),
-    linear-gradient(180deg, rgba(17, 16, 14, 0.32) 0%, transparent 25%, transparent 75%, rgba(17, 16, 14, 0.48) 100%);
+    linear-gradient(90deg, rgba(17, 16, 14, 0.45) 0%, rgba(24, 21, 18, 0.22) 40%, rgba(28, 25, 21, 0.04) 68%, transparent 100%),
+    linear-gradient(180deg, rgba(17, 16, 14, 0.18) 0%, transparent 28%, transparent 78%, rgba(17, 16, 14, 0.28) 100%);
 }
 .hero-content {
   position: relative;
@@ -2155,8 +2175,9 @@ figcaption#gallery-caption {
 }
 .location-map-frame > img {
   width: 100%;
-  height: 320px;
-  object-fit: contain;
+  height: auto;
+  aspect-ratio: 1200 / 820;
+  object-fit: cover;
   object-position: center;
   display: block;
 }
@@ -5591,6 +5612,15 @@ figcaption#gallery-caption {
   .approval-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 14px !important; }
 }
 @media (max-width: 760px) {
+  section[id],
+  .section[id],
+  [id="faq"],
+  [id="pricing"],
+  [id="location"],
+  [id="floor-plans"],
+  [id="amenities"] {
+    scroll-margin-top: 64px !important;
+  }
   .site-header {
     position: fixed;
     top: 10px;
@@ -5641,6 +5671,7 @@ figcaption#gallery-caption {
     gap: 4px !important;
   }
   .brand-title .brand-godrej-logo, .brand-title .brand-sobha-logo { width: 62px !important; height: 22px !important; }
+  .brand-title .brand-builder { display: inline-block !important; font-size: 13px !important; font-weight: 700 !important; letter-spacing: 0.08em !important; color: #dfb76c !important; }
   .brand-title .brand-florenne, .brand-title .brand-project { display: inline-block !important; width: auto !important; font-size: 12px !important; font-weight: 700 !important; letter-spacing: 0.02em !important; }
   .brand-subtitle { display: block !important; font-size: 5.2px !important; letter-spacing: 0.05em !important; line-height: 1.2 !important; white-space: nowrap !important; }
   .nav-actions {
@@ -5750,7 +5781,7 @@ figcaption#gallery-caption {
   }
   .hero-shade {
     background:
-      linear-gradient(180deg, rgba(17, 16, 14, 0.72) 0%, rgba(24, 21, 18, 0.42) 45%, rgba(17, 16, 14, 0.68) 100%);
+      linear-gradient(180deg, rgba(17, 16, 14, 0.46) 0%, rgba(24, 21, 18, 0.20) 45%, rgba(17, 16, 14, 0.42) 100%);
   }
   .hero-content {
     width: 100% !important;
@@ -6134,8 +6165,9 @@ figcaption#gallery-caption {
   }
   .location-map-frame > img {
     width: 100% !important;
-    height: clamp(240px, 68vw, 300px) !important;
-    object-fit: contain !important;
+    height: auto !important;
+    aspect-ratio: 1200 / 820 !important;
+    object-fit: cover !important;
     object-position: center !important;
   }
   .location-leaflet-map {
@@ -6639,6 +6671,7 @@ figcaption#gallery-caption {
   .price-val { font-size: 19px !important; }
   .brand-title { font-size: 11.5px !important; letter-spacing: 0.09em !important; line-height: 1 !important; white-space: nowrap !important; }
   .brand-title .brand-godrej-logo, .brand-title .brand-sobha-logo { width: 54px !important; height: 19px !important; }
+  .brand-title .brand-builder { font-size: 11.5px !important; letter-spacing: 0.06em !important; color: #dfb76c !important; }
   .brand-title .brand-florenne, .brand-title .brand-project { font-size: 10.5px !important; letter-spacing: 0.05em !important; }
   .brand-subtitle { display: block !important; font-size: 4.4px !important; letter-spacing: 0.02em !important; white-space: nowrap !important; }
   .button-gold-pill.nav-cta {

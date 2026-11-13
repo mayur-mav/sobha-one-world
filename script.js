@@ -1,6 +1,82 @@
 (() => {
   "use strict";
 
+  // Scroll to hash target element accounting for fixed capsule header
+  const scrollToHashTarget = (smooth = false) => {
+    const rawHash = window.location.hash;
+    if (!rawHash || rawHash === "#" || rawHash.length <= 1) return;
+
+    let target = null;
+    try {
+      target = document.querySelector(rawHash);
+    } catch (e) {}
+
+    if (!target) {
+      if (rawHash === "#floorplans") target = document.querySelector("#floor-plans");
+      else if (rawHash === "#floor-plans") target = document.querySelector("#floorplans");
+      else if (rawHash === "#faqs") target = document.querySelector("#faq");
+      else if (rawHash === "#price" || rawHash === "#prices" || rawHash === "#price-plans") target = document.querySelector("#pricing");
+    }
+
+    if (target) {
+      const header = document.querySelector(".site-header");
+      const headerOffset = header ? header.offsetHeight + 18 : 84;
+      const elementPosition = target.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = Math.max(0, elementPosition - headerOffset);
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: smooth ? "smooth" : "auto"
+      });
+    }
+  };
+
+  // Handle scroll position on refresh/load:
+  // 1. If URL has NO hash (normal URL): always start at top of page (0, 0).
+  // 2. If URL HAS a hash (e.g. #faq, #pricing): bring user directly to that section.
+  const hasHash = Boolean(window.location.hash && window.location.hash !== "#" && window.location.hash.length > 1);
+  if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+  }
+
+  if (!hasHash) {
+    window.scrollTo(0, 0);
+    window.addEventListener("load", () => {
+      const curHash = Boolean(window.location.hash && window.location.hash !== "#" && window.location.hash.length > 1);
+      if (!curHash) window.scrollTo(0, 0);
+    });
+  } else {
+    // Hash present in URL (e.g. #faq): schedule accurate scroll
+    requestAnimationFrame(() => scrollToHashTarget(false));
+    setTimeout(() => scrollToHashTarget(false), 50);
+    setTimeout(() => scrollToHashTarget(false), 200);
+    setTimeout(() => scrollToHashTarget(false), 500);
+    window.addEventListener("load", () => scrollToHashTarget(false));
+  }
+
+  window.addEventListener("beforeunload", () => {
+    const curHash = Boolean(window.location.hash && window.location.hash !== "#" && window.location.hash.length > 1);
+    if (!curHash && "scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+  });
+
+  window.addEventListener("pageshow", () => {
+    const curHash = Boolean(window.location.hash && window.location.hash !== "#" && window.location.hash.length > 1);
+    if (!curHash) {
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
+      window.scrollTo(0, 0);
+    } else {
+      scrollToHashTarget(false);
+    }
+  });
+
+  window.addEventListener("hashchange", () => {
+    scrollToHashTarget(true);
+  });
+
   const data = window.sobhaData || window.florenneData;
   const salesWhatsappNumber = "917411662228";
   if (!data) {
@@ -115,7 +191,7 @@
                   <div class="lock-circle-badge" aria-hidden="true">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
                   </div>
-                  <button class="button-download-plan-card" type="button" data-scroll-enquire aria-label="Download ${escapeHtml(plan.tabName || plan.name)} Plan">
+                  <button class="button-download-plan-card" type="button" data-scroll-enquire data-plan-config="${escapeHtml(plan.tabName || plan.name)}" aria-label="Download ${escapeHtml(plan.tabName || plan.name)} Plan">
                     Download ${escapeHtml(plan.tabName || plan.name)} Plan
                   </button>
                   <span class="lock-subnote">Full high-resolution CAD &amp; dimensions on WhatsApp</span>
@@ -152,7 +228,7 @@
               `).join("")}
             </div>
 
-            <button class="button-download-plan-main" type="button" data-scroll-enquire>
+            <button class="button-download-plan-main" type="button" data-scroll-enquire data-plan-config="${escapeHtml(plan.tabName || plan.name)}">
               <span>Download ${escapeHtml(plan.tabName || plan.name)} Floor Plan</span>
               <span class="btn-download-arrow" aria-hidden="true">&darr;</span>
             </button>
@@ -454,6 +530,11 @@
         });
       }, true);
     }
+  }
+
+  // Once all dynamic elements are in DOM, scroll to hash if page loaded/refreshed with one (e.g. #faq)
+  if (hasHash) {
+    scrollToHashTarget(false);
   }
 
   // ==========================================================================
@@ -1473,10 +1554,42 @@
     if (popupSourceContext) popupSourceContext.value = source;
 
     if (popupConfigSelect && config) {
-      const matchOpt = Array.from(popupConfigSelect.options).find(
-        (o) => o.value.toLowerCase().includes(config.toLowerCase()) || config.toLowerCase().includes(o.value.toLowerCase())
-      );
-      if (matchOpt) popupConfigSelect.value = matchOpt.value;
+      const configStr = String(config).trim();
+      let matchOpt = null;
+
+      if (/4\s*bhk\s*grande/i.test(configStr)) {
+        matchOpt = Array.from(popupConfigSelect.options).find((o) => /grande/i.test(o.value) || /grande/i.test(o.textContent));
+      } else if (/4\s*bhk\s*luxe/i.test(configStr)) {
+        matchOpt = Array.from(popupConfigSelect.options).find((o) => /luxe/i.test(o.value) || /luxe/i.test(o.textContent));
+      } else if (/3\s*bhk.*3\s*t/i.test(configStr)) {
+        matchOpt = Array.from(popupConfigSelect.options).find((o) => /3\s*bhk.*\+?\s*3t/i.test(o.value) || /3\s*bhk.*\+?\s*3t/i.test(o.textContent));
+      } else if (/3\s*bhk.*2\s*t/i.test(configStr)) {
+        matchOpt = Array.from(popupConfigSelect.options).find((o) => /3\s*bhk.*\+?\s*2t/i.test(o.value) || /3\s*bhk.*\+?\s*2t/i.test(o.textContent));
+      } else if (/2\s*bhk/i.test(configStr)) {
+        matchOpt = Array.from(popupConfigSelect.options).find((o) => /2\s*bhk/i.test(o.value) || /2\s*bhk/i.test(o.textContent));
+      } else if (/1\s*bhk/i.test(configStr)) {
+        matchOpt = Array.from(popupConfigSelect.options).find((o) => /1\s*bhk/i.test(o.value) || /1\s*bhk/i.test(o.textContent));
+      }
+
+      if (!matchOpt) {
+        matchOpt = Array.from(popupConfigSelect.options).find(
+          (o) => o.value.toLowerCase().includes(configStr.toLowerCase()) ||
+                 configStr.toLowerCase().includes(o.value.toLowerCase()) ||
+                 o.textContent.toLowerCase().includes(configStr.toLowerCase())
+        );
+      }
+
+      if (matchOpt) {
+        popupConfigSelect.value = matchOpt.value;
+        Array.from(popupConfigSelect.options).forEach((opt) => {
+          opt.selected = opt.value === matchOpt.value;
+        });
+        const shell = popupConfigSelect.closest(".custom-dropdown-shell");
+        const trigger = shell?.querySelector(".custom-dropdown-trigger");
+        if (trigger) {
+          syncCustomSelect(popupConfigSelect, trigger);
+        }
+      }
     }
 
     enquiryModal.hidden = false;
@@ -1572,7 +1685,7 @@
         source = "Cost Sheet Request";
       } else if (btn.classList.contains("button-download-plan-card") || btn.classList.contains("button-download-plan-main") || btn.closest(".floorplans-section")) {
         const activeTab = document.querySelector(".floorplan-pill-tab.is-active, .floorplan-pill-tab[aria-selected='true']");
-        const cfgTitle = activeTab ? activeTab.textContent.trim() : "";
+        const cfgTitle = btn.dataset.planConfig || (activeTab ? activeTab.textContent.trim() : "");
         config = cfgTitle || "";
         title = cfgTitle ? `Download ${cfgTitle} Floor Plan` : "Download Unit Floor Plans";
         subtitle = "Floor-by-floor blueprints, carpet area, and room dimensions on WhatsApp within minutes.";

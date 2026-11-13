@@ -20,10 +20,21 @@
     <noscript>
       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
     </noscript>
-    <link rel="stylesheet" href="styles.css?v=12.0">
-    <script src="data.js?v=12.0" defer></script>
+    <script>
+      (function() {
+        if ('scrollRestoration' in history) {
+          history.scrollRestoration = 'manual';
+        }
+        var h = window.location.hash;
+        if (!h || h === '#' || h.length <= 1) {
+          window.scrollTo(0, 0);
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="styles.css?v=17.0">
+    <script src="data.js?v=17.0" defer></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
-    <script src="script.js?v=12.0" defer></script>
+    <script src="script.js?v=17.0" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -159,10 +170,12 @@
               <label class="form-label" for="hero-home">LOOKING FOR</label>
               <div class="custom-select-wrap">
                 <select id="hero-home" name="homeType" class="full-select">
-                  <option value="1 BHK Luxury (734 sq. ft.)">1 BHK Luxury (734 sq. ft.)</option>
-                  <option value="2 BHK Luxe (1,063 - 1,204 sq. ft.)" selected>2 BHK Luxe (1,063 - 1,204 sq. ft.)</option>
-                  <option value="3 BHK Luxe (1,510 - 1,838 sq. ft.)">3 BHK Luxe (1,510 - 1,838 sq. ft.)</option>
-                  <option value="4 BHK Presidential (2,096 - 2,415 sq. ft.)">4 BHK Presidential (2,096 - 2,415 sq. ft.)</option>
+                  <option value="1 BHK (734 sqft · ₹1.12 - 1.20 Cr)">1 BHK — 734 sqft (₹1.12 - 1.20 Cr*)</option>
+                  <option value="2 BHK (1063 sqft · ₹1.60 - 1.70 Cr)" selected>2 BHK — 1063 sqft (₹1.60 - 1.70 Cr*)</option>
+                  <option value="3 BHK + 2T (1510 sqft · ₹2.30 - 2.40 Cr)">3 BHK + 2T — 1510 sqft (₹2.30 - 2.40 Cr*)</option>
+                  <option value="3 BHK + 3T (1830 sqft · ₹2.75 - 2.90 Cr)">3 BHK + 3T — 1830 sqft (₹2.75 - 2.90 Cr*)</option>
+                  <option value="4 BHK Luxe (2 car park) (2091 sqft · ₹3.15 - 3.40 Cr)">4 BHK Luxe (2 car park) — 2091 sqft (₹3.15 - 3.40 Cr*)</option>
+                  <option value="4 BHK Grande (2 car park) (2415 sqft · ₹3.65 - 3.90 Cr)">4 BHK Grande (2 car park) — 2415 sqft (₹3.65 - 3.90 Cr*)</option>
                 </select>
               </div>
             </div>
@@ -521,7 +534,7 @@
 
             <div class="location-visual-col reveal">
               <div class="location-map-frame">
-                <img src="assets/aerial-view.webp" alt="Location map highlighting Sobha One World on Old Madras Road, Hoskote Corridor" width="1200" height="800" loading="lazy" decoding="async" fetchpriority="low" draggable="false">
+                <img src="assets/aerial-view.webp" alt="Location map highlighting Sobha One World on Old Madras Road, Hoskote Corridor" width="1200" height="820" loading="lazy" decoding="async" fetchpriority="low" draggable="false">
                 <div class="map-caption">TOWNSHIP OVERVIEW &amp; STRATEGIC CONNECTIVITY · SOBHA ONE WORLD</div>
               </div>
 
