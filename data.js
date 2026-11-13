@@ -59,12 +59,12 @@ window.sobhaData = {
     { title: "Strong Residential Demand", text: "Robust rental and capital appreciation potential backed by major surrounding employment hubs." }
   ],
   overviewShowcase: [
-    { src: "assets/rowhouses-front.webp", alt: "Sobha One World 360-acre mega integrated township and 46-floor skyline towers", caption: "360-ACRE INTEGRATED TOWNSHIP — PHASE 1: 48 ACRES" },
-    { src: "assets/curved-clubhouse.webp", alt: "120000 sqft Grand Clubhouse at Sobha One World", caption: "120,000 SQFT GRAND CLUBHOUSE & LIFESTYLE AMENITIES" },
-    { src: "assets/club-pool.webp", alt: "Private Cricket Stadium and Mega Sports Arena at Sobha One World", caption: "PRIVATE CRICKET STADIUM & MEGA SPORTS ARENA" },
-    { src: "assets/living-dining.webp", alt: "Thoughtfully planned residences with panoramic balcony views", caption: "THOUGHTFULLY PLANNED 1, 2, 3 & 4 BHK RESIDENCES" },
-    { src: "assets/mansard-villas.webp", alt: "Global Indian District with high-street retail, commercial hubs and wide boulevards", caption: "GLOBAL INDIAN DISTRICT — COMMERCIAL & RETAIL HUBS" },
-    { src: "assets/garden-trail.webp", alt: "Grand central greens, serene lake buffer and lush landscapes", caption: "GRAND CENTRAL GREENS & SERENE LAKE BUFFER" }
+    { src: "assets/aerial-view.webp", alt: "Sobha One World 360-acre mega integrated township and 46-floor skyline towers", caption: "360-ACRE INTEGRATED TOWNSHIP — PHASE 1: 48 ACRES" },
+    { src: "assets/main-entrance.webp", alt: "Grand main entrance gate and wide boulevards at Sobha One World", caption: "GLOBAL INDIAN DISTRICT — GRAND ENTRANCE BOULEVARD" },
+    { src: "assets/amenities-page.webp", alt: "120000 sqft Grand Clubhouse at Sobha One World", caption: "120,000 SQFT GRAND CLUBHOUSE & LIFESTYLE AMENITIES" },
+    { src: "assets/recreation.webp", alt: "Private Cricket Stadium and Mega Sports Arena at Sobha One World", caption: "PRIVATE CRICKET STADIUM & MEGA SPORTS ARENA" },
+    { src: "assets/interior-view.webp", alt: "Thoughtfully planned residences with panoramic balcony views", caption: "THOUGHTFULLY PLANNED 1, 2, 3 & 4 BHK RESIDENCES" },
+    { src: "assets/garden-walkway.webp", alt: "Grand central greens, serene lake buffer and lush landscapes", caption: "GRAND CENTRAL GREENS & SERENE LAKE BUFFER" }
   ],
   brochureItems: [
     "Complete 360-acre township master plan with Phase 1 48-acre layout blueprint",
@@ -143,7 +143,7 @@ window.sobhaData = {
       saleable: "734 sqft",
       carpet: "734 sqft",
       price: "₹1.12 - 1.20 Cr*",
-      image: "assets/1bhk-floor-plan.svg",
+      image: "assets/1bhk-floor-plan.webp",
       bullets: [
         "734 sqft thoughtfully planned layout",
         "Phase 1: 48 acres of premium development",
@@ -158,7 +158,7 @@ window.sobhaData = {
       saleable: "1063 sqft",
       carpet: "1050 - 1063 sqft",
       price: "₹1.60 - 1.70 Cr*",
-      image: "assets/2bhk-floor-plan.svg",
+      image: "assets/2bhk-floor-plan.webp",
       bullets: [
         "1063 sqft ergonomic two-bedroom floor plan",
         "Overlooking grand central greens, serene lake buffer & lush landscapes",
@@ -173,7 +173,7 @@ window.sobhaData = {
       saleable: "1510 sqft",
       carpet: "1510 sqft",
       price: "₹2.30 - 2.40 Cr*",
-      image: "assets/3bhk-2t-floor-plan.svg",
+      image: "assets/3bhk-2t-floor-plan.webp",
       bullets: [
         "1510 sqft spacious 3 Bed + 2 Toilets configuration",
         "Optimal natural cross-ventilation and sunlit living spaces",
@@ -188,7 +188,7 @@ window.sobhaData = {
       saleable: "1830 sqft",
       carpet: "1830 sqft",
       price: "₹2.75 - 2.90 Cr*",
-      image: "assets/3bhk-3t-floor-plan.svg",
+      image: "assets/3bhk-3t-floor-plan.webp",
       bullets: [
         "1830 sqft grand 3 Bed + 3 Toilets executive suite",
         "All bedrooms with dedicated bathroom access and premium fittings",
@@ -203,7 +203,7 @@ window.sobhaData = {
       saleable: "2091 sqft",
       carpet: "2091 - 2100 sqft",
       price: "₹3.15 - 3.40 Cr*",
-      image: "assets/4bhk-luxe-floor-plan.svg",
+      image: "assets/4bhk-luxe-floor-plan.webp",
       bullets: [
         "2091 sqft luxury 4-bedroom palatial layout",
         "Includes 2 dedicated covered car parking spaces",
@@ -218,7 +218,7 @@ window.sobhaData = {
       saleable: "2415 sqft",
       carpet: "2400 - 2415 sqft",
       price: "₹3.65 - 3.90 Cr*",
-      image: "assets/4bhk-grande-floor-plan.svg",
+      image: "assets/4bhk-grande-floor-plan.webp",
       bullets: [
         "2415 sqft maximum-dimension 4-bedroom grande suite",
         "Includes 2 dedicated covered car parking spaces",
@@ -231,8 +231,8 @@ window.sobhaData = {
       name: "1 & 2 BHK Residences",
       label: "734 & 1063 sqft",
       description: "Thoughtfully planned 1 BHK (734 sqft · ₹1.12 - 1.20 Cr) and 2 BHK (1063 sqft · ₹1.60 - 1.70 Cr) residences in a 360-acre integrated township.",
-      image: "assets/rowhouses-front.webp",
-      imageAlt: "Sobha One World high-rise tower elevations",
+      image: "assets/bedroom-study.webp",
+      imageAlt: "Sobha One World luxury 1 & 2 BHK residences",
       size: "734 & 1063 sqft",
       tag: "1 & 2 BHK"
     },
@@ -240,20 +240,20 @@ window.sobhaData = {
       name: "3 & 4 BHK Residences",
       label: "1510 to 2415 sqft",
       description: "Spacious 3 BHK (1510 & 1830 sqft · ₹2.30 - 2.90 Cr) and 4 BHK Luxe/Grande with 2 car parks (2091 & 2415 sqft · ₹3.15 - 3.90 Cr).",
-      image: "assets/villa-courtyard.webp",
+      image: "assets/primary-bedroom.webp",
       imageAlt: "Palatial 3 and 4 BHK residences at Sobha One World",
       size: "1510 to 2415 sqft",
       tag: "3 & 4 BHK"
     }
   ],
   amenitySlides: [
-    { src: "assets/curved-clubhouse.webp", title: "120000 sqft Grand Clubhouse", alt: "120000 sqft Grand Clubhouse at Sobha One World" },
-    { src: "assets/club-pool.webp", title: "Private Cricket Stadium", alt: "Private Cricket Stadium at Sobha One World" },
-    { src: "assets/lap-pool.webp", title: "Mega Sports Arena & 350m Running Track", alt: "Mega Sports Arena and 350-meter running track" },
-    { src: "assets/waterfall-pool.webp", title: "Grand Central Greens & Lake Buffer", alt: "Serene lake buffer and grand central greens" },
-    { src: "assets/skylit-lounge.webp", title: "Central Plaza (1000+ Capacity)", alt: "Central Plaza with 1000+ person gathering capacity" },
-    { src: "assets/club-lounge.webp", title: "Dedicated Pet Parks", alt: "Dedicated pet parks for pet-friendly township living" },
-    { src: "assets/gym.webp", title: "Global Indian District Boulevard", alt: "High-street retail, commercial hubs and wide boulevards" }
+    { src: "assets/amenities-page.webp", title: "120000 sqft Grand Clubhouse", alt: "120000 sqft Grand Clubhouse at Sobha One World" },
+    { src: "assets/recreation.webp", title: "Private Cricket Stadium", alt: "Private Cricket Stadium at Sobha One World" },
+    { src: "assets/lifestyle.webp", title: "Mega Sports Arena & 350m Running Track", alt: "Mega Sports Arena and 350-meter running track" },
+    { src: "assets/garden-walkway.webp", title: "Grand Central Greens & Lake Buffer", alt: "Serene lake buffer and grand central greens" },
+    { src: "assets/globe-fountain.webp", title: "Central Plaza (1000+ Capacity)", alt: "Central Plaza with 1000+ person gathering capacity" },
+    { src: "assets/community.webp", title: "Global Indian District Boulevard", alt: "High-street retail, commercial hubs and wide boulevards" },
+    { src: "assets/lobby.webp", title: "Grand Triple-Height Entrance Lobby", alt: "Triple-height entrance lobby at Sobha One World" }
   ],
   amenityGroups: [
     {
@@ -274,58 +274,94 @@ window.sobhaData = {
   ],
   projectGallery: [
     {
-      src: "assets/rowhouses-front.webp",
+      src: "assets/aerial-view.webp",
       tag: "TOWNSHIP",
       credit: "ARTIST'S IMPRESSION",
       alt: "Sprawling 360-acre integrated township and 46-floor towers at Sobha One World"
     },
     {
-      src: "assets/pool-villas.webp",
+      src: "assets/main-entrance.webp",
+      tag: "ENTRANCE",
+      credit: "ARTIST'S IMPRESSION",
+      alt: "Grand main entrance gate and wide boulevards at Sobha One World"
+    },
+    {
+      src: "assets/globe-fountain.webp",
+      tag: "PLAZA",
+      credit: "ARTIST'S IMPRESSION",
+      alt: "Central Plaza with iconic globe fountain landmark"
+    },
+    {
+      src: "assets/amenities-page.webp",
       tag: "CLUBHOUSE",
       credit: "ARTIST'S IMPRESSION",
-      alt: "120000 sqft Grand Clubhouse and sports zones"
+      alt: "120,000 sqft Grand Clubhouse and sports zones"
     },
     {
-      src: "assets/living-dining.webp",
-      tag: "INTERIORS",
-      credit: "ARTIST'S IMPRESSION",
-      alt: "Thoughtfully planned living-dining area with panoramic balcony view"
-    },
-    {
-      src: "assets/garden-couple.webp",
-      tag: "CENTRAL GREENS",
-      credit: "ARTIST'S IMPRESSION",
-      alt: "Grand central greens and serene lake buffer at Sobha One World"
-    },
-    {
-      src: "assets/bedroom.webp",
-      tag: "BEDROOM",
-      credit: "ARTIST'S IMPRESSION",
-      alt: "Comfortable bedroom suite in Sobha One World residence"
-    },
-    {
-      src: "assets/roof-lounge.webp",
+      src: "assets/recreation.webp",
       tag: "SPORTS",
       credit: "ARTIST'S IMPRESSION",
       alt: "Private Cricket Stadium and Mega Sports Arena"
     },
     {
-      src: "assets/villa-courtyard.webp",
-      tag: "PLAZA",
+      src: "assets/garden-walkway.webp",
+      tag: "CENTRAL GREENS",
       credit: "ARTIST'S IMPRESSION",
-      alt: "Central Plaza with 1000+ capacity and Global Indian District boulevards"
+      alt: "Grand central greens and serene lake buffer walkways"
     },
     {
-      src: "assets/dining-room.webp",
-      tag: "DINING",
-      credit: "ARTIST'S IMPRESSION",
-      alt: "Designer dining area in 3 & 4 BHK residences"
-    },
-    {
-      src: "assets/rowhouses-night.webp",
-      tag: "EVENING",
+      src: "assets/exterior-night.webp",
+      tag: "NIGHT VIEW",
       credit: "ARTIST'S IMPRESSION",
       alt: "Illuminated high-rise towers and wide boulevards at dusk"
+    },
+    {
+      src: "assets/lobby.webp",
+      tag: "LOBBY",
+      credit: "ARTIST'S IMPRESSION",
+      alt: "Triple-height grand entrance lobby"
+    },
+    {
+      src: "assets/interior-view.webp",
+      tag: "LIVING ROOM",
+      credit: "ARTIST'S IMPRESSION",
+      alt: "Sunlit living-dining area with panoramic balcony views"
+    },
+    {
+      src: "assets/kitchen.webp",
+      tag: "KITCHEN",
+      credit: "ARTIST'S IMPRESSION",
+      alt: "Designer modular kitchen and utility space"
+    },
+    {
+      src: "assets/primary-bedroom.webp",
+      tag: "MASTER BEDROOM",
+      credit: "ARTIST'S IMPRESSION",
+      alt: "Palatial master bedroom suite with attached luxury bath"
+    },
+    {
+      src: "assets/bedroom-study.webp",
+      tag: "BEDROOM",
+      credit: "ARTIST'S IMPRESSION",
+      alt: "Comfortable bedroom and private study suite"
+    },
+    {
+      src: "assets/community.webp",
+      tag: "BOULEVARD",
+      credit: "ARTIST'S IMPRESSION",
+      alt: "Global Indian District wide boulevards and high-street retail"
+    },
+    {
+      src: "assets/lifestyle.webp",
+      tag: "LIFESTYLE",
+      credit: "ARTIST'S IMPRESSION",
+      alt: "World-class fitness, wellness and leisure amenities"
+    },
+    {
+      src: "assets/exterior-view.webp",
+      tag: "ELEVATION",
+      credit: "ARTIST'S IMPRESSION",
+      alt: "Iconic Sobha One World G+46 tower architectural elevation"
     }
   ],
   locationGroups: [
@@ -455,40 +491,56 @@ window.sobhaData = {
   },
   faqs: [
     {
-      question: "What is Sobha One World?",
-      answer: "Sobha One World is SOBHA’s Mega Integrated Township — a sprawling 360-acre development (Phase 1: 48 acres) featuring ~3,500 thoughtfully planned residences, iconic 46-floor towers, a 120,000 sqft Grand Clubhouse, Private Cricket Stadium, and serene lake buffer."
+      question: "What is SOBHA OneWorld?",
+      answer: "OneWorld SOBHA is an exclusive residential township project launched by SOBHA Limited in the Eastern part of Bangalore. The project comprises luxury apartments along with open spaces and community amenities."
     },
     {
-      question: "What is the total land expanse and structure of Phase 1?",
-      answer: "The township spans 360 acres, with Phase 1 covering 48 acres of premium development. The tower structure is 3 Basements + Ground & 1st floor car parking + 46 floors."
+      question: "Where is SOBHA OneWorld located?",
+      answer: "SOBHA OneWorld is situated in Greater Whitefield, located on the Old Madras Road, near Hoskote, Bengaluru, Karnataka. This location gives easy connectivity to Whitefield, KR Puram, and other important areas in East Bengaluru."
     },
     {
-      question: "What are the available configurations and unit sizes?",
-      answer: "The project offers 1 BHK (734 sqft), 2 BHK (1063 sqft), 3 BHK (1510 & 1830 sqft), and 4 BHK (2091 & 2415 sqft)."
+      question: "Who is the developer of SOBHA OneWorld?",
+      answer: "SOBHA OneWorld is constructed by SOBHA Limited, a well-known Indian real estate development company which constructs residential, commercial, and construction projects."
     },
     {
-      question: "What are the price ranges for homes at Sobha One World?",
-      answer: "1 BHK (734 sqft): ₹1.12 - 1.20 Cr* · 2 BHK (1063 sqft): ₹1.60 - 1.70 Cr* · 3 BHK + 2T (1510 sqft): ₹2.30 - 2.40 Cr* · 3 BHK + 3T (1830 sqft): ₹2.75 - 2.90 Cr* · 4 BHK Luxe (2091 sqft, 2 car park): ₹3.15 - 3.40 Cr* · 4 BHK Grande (2415 sqft, 2 car park): ₹3.65 - 3.90 Cr*."
+      question: "How large is the SOBHA OneWorld project?",
+      answer: "The residential component of the development occupies 48 acres and consists of 14 wings having 3,484 residential units."
     },
     {
-      question: "What are the major amenities provided in the township?",
-      answer: "Key amenities include a Private Cricket Stadium, 120,000 sqft Grand Clubhouse, Central Plaza (1000+ capacity), Dedicated Pet Parks, Mega Sports Arena, 350-meter Running Track, grand central greens, serene lake buffer, high-street retail, and commercial hubs."
+      question: "Are the apartments at SOBHA OneWorld designed according to Vastu principles?",
+      answer: "The marketing details on the project emphasize Vastu-oriented planning, which takes into account the orientation of the entrance and the bedroom. The buyers must confirm the exact orientation of their desired apartment."
     },
     {
-      question: "How is the connectivity from Sobha One World?",
-      answer: "Hoskote Junction is just 2 mins away, STRR / Airport Road is 5–10 mins, KR Puram is 10 mins, Whitefield Metro is 15 mins, Kempegowda International Airport is 25–30 mins, and Marathahalli / Bellandur is 35–40 mins away."
+      question: "Is SOBHA OneWorld a good option for both homebuyers and real estate investors?",
+      answer: "SOBHA OneWorld is an attractive project for both end users and investors due to its integrated development approach, reputable builder, variety of apartment types, and prime location at East Bangalore. However, buyers must make an independent assessment of price, connectivity, rental demand, maintenance fees, and possession schedule before buying. through its integrated township concept, high-rise housing development, landscaped themed zones, lifestyle amenities, retail spaces, and the construction prowess of SOBHA."
     },
     {
-      question: "Why is Hoskote the next growth hub?",
-      answer: "Hoskote is a Designated Satellite Town and the Gateway to East Bengaluru, with excellent connectivity to IT corridors, upcoming mass transit integration, and strong residential demand from employment hubs."
+      question: "Are model apartments available for viewing?",
+      answer: "Buyers may contact the sales department of the project for information on the availability of the model flats and also the site tours."
     },
     {
-      question: "Who is Sobha One World perfect for?",
-      answer: "It is perfect for families seeking a premium long-term lifestyle and smart investors targeting early-stage appreciation backed by SOBHA."
+      question: "Is SOBHA OneWorld RERA registered?",
+      answer: "Yes. The project has six phase-wise Karnataka RERA registrations. Buyers can verify the relevant registration details on the Karnataka RERA website."
     },
     {
-      question: "How do I get exclusive details and priority access?",
-      answer: "Connect now with our sales desk on WhatsApp or call +91 74116 62228 for official pricing sheets, floor plan layouts, and priority access."
+      question: "How can I book an apartment at SOBHA OneWorld?",
+      answer: "Prospective purchasers may contact the project site or the authorized sales agents. The general process of booking involves choosing an apartment, going through the layout, costing, KYC documentation, making payment of the booking amount and other formalities related to the sale process."
+    },
+    {
+      question: "Does SOBHA OneWorld have sports and fitness facilities?",
+      answer: "Yes. There is provision for health and recreation facilities, such as jogging and cycling tracks, swimming pools, tennis and pickle ball courts, sports fields, and wellness centers."
+    },
+    {
+      question: "How well is SOBHA OneWorld connected to major areas of Bengaluru?",
+      answer: "SOBHA OneWorld is well-connected with the significant destinations in the East part of Bangalore like Whitefield, KR Puram, Hoskote, and Old Madras Road. There are many commercial, educational, and social facilities available in the vicinity."
+    },
+    {
+      question: "Is SOBHA OneWorld suitable for professionals working in Whitefield?",
+      answer: "Yes. Being located at East Bangalore, it is an apt place to live in for the people who work in Whitefield, ITPL, etc."
+    },
+    {
+      question: "What apartment configurations are available at SOBHA OneWorld?",
+      answer: "SOBHA OneWorld has a variety of 1, 2, 3, and 4 BHK apartment options for individuals, couples, and families according to their space needs."
     }
   ]
 };
