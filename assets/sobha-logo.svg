@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" width="100%" height="100%">
+  <defs>
+    <linearGradient id="sobhaGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E2C481"/>
+      <stop offset="50%" stop-color="#C5A059"/>
+      <stop offset="100%" stop-color="#9E7935"/>
+    </linearGradient>
+  </defs>
+  <!-- SOBHA Brand Emblem / Monogram -->
+  <g transform="translate(10, 8)">
+    <!-- Outer gold square border -->
+    <rect x="0" y="0" width="64" height="64" rx="4" fill="none" stroke="url(#sobhaGold)" stroke-width="2.5"/>
+    <!-- Inner architectural gold & red motif -->
+    <rect x="10" y="10" width="44" height="44" rx="2" fill="#151B24"/>
+    <path d="M22 42 L22 22 L42 22 L42 42 Z" fill="none" stroke="url(#sobhaGold)" stroke-width="2"/>
+    <circle cx="32" cy="32" r="4.5" fill="#C8432B"/>
+    <line x1="16" y1="32" x2="48" y2="32" stroke="url(#sobhaGold)" stroke-width="1.2" opacity="0.6"/>
+    <line x1="32" y1="16" x2="32" y2="48" stroke="url(#sobhaGold)" stroke-width="1.2" opacity="0.6"/>
+  </g>
+
+  <!-- Typography: SOBHA -->
+  <g fill="url(#sobhaGold)">
+    <text x="90" y="44" font-family="'Cinzel', 'Playfair Display', 'Lora', 'Georgia', serif" font-size="34" font-weight="700" letter-spacing="4">SOBHA</text>
+  </g>
+
+  <!-- Subtitle: PASSION AT WORK -->
+  <g fill="#A6B3C2">
+    <text x="92" y="60" font-family="'Inter', 'Montserrat', -apple-system, sans-serif" font-size="9" font-weight="600" letter-spacing="4.5">PASSION AT WORK</text>
+  </g>
+</svg>
