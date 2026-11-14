@@ -4,6 +4,7 @@ window.sobhaData = {
   // e.g. leadApiUrl: "https://your-backend.com/api/leads",
   // ==========================================================================
   leadApiUrl: "",
+  reraNo: "PRM/KA/RERA/1250/304/PR/080526/008634",
 
   tagline: "DISCOVER THE NEXT LANDMARK TOWNSHIP",
   subTagline: "SOBHA’s Mega Integrated Township · Sobha One World",
@@ -80,8 +81,8 @@ window.sobhaData = {
       plot: "High-Rise Tower (G+46)",
       carpet: "734 sqft",
       area: "734 sqft",
-      starting: "₹1.12 - 1.20 Cr*",
-      subLabel: "PRICE RANGE"
+      starting: "₹1.20 Cr*",
+      subLabel: "PRICE"
     },
     {
       brand: "SOBHA ONE WORLD",
@@ -90,8 +91,8 @@ window.sobhaData = {
       plot: "High-Rise Tower (G+46)",
       carpet: "1050 - 1063 sqft",
       area: "1063 sqft",
-      starting: "₹1.60 - 1.70 Cr*",
-      subLabel: "PRICE RANGE"
+      starting: "₹1.70 Cr*",
+      subLabel: "PRICE"
     },
     {
       brand: "SOBHA ONE WORLD",
@@ -100,8 +101,8 @@ window.sobhaData = {
       plot: "High-Rise Tower (G+46)",
       carpet: "1510 sqft",
       area: "1510 sqft",
-      starting: "₹2.30 - 2.40 Cr*",
-      subLabel: "PRICE RANGE"
+      starting: "₹2.40 Cr*",
+      subLabel: "PRICE"
     },
     {
       brand: "SOBHA ONE WORLD",
@@ -110,8 +111,8 @@ window.sobhaData = {
       plot: "High-Rise Tower (G+46)",
       carpet: "1830 sqft",
       area: "1830 sqft",
-      starting: "₹2.75 - 2.90 Cr*",
-      subLabel: "PRICE RANGE"
+      starting: "₹2.90 Cr*",
+      subLabel: "PRICE"
     },
     {
       brand: "SOBHA ONE WORLD",
@@ -120,8 +121,8 @@ window.sobhaData = {
       plot: "High-Rise Tower (G+46)",
       carpet: "2091 - 2100 sqft",
       area: "2091 sqft",
-      starting: "₹3.15 - 3.40 Cr*",
-      subLabel: "PRICE RANGE"
+      starting: "₹3.40 Cr*",
+      subLabel: "PRICE"
     },
     {
       brand: "SOBHA ONE WORLD",
@@ -130,8 +131,8 @@ window.sobhaData = {
       plot: "High-Rise Tower (G+46)",
       carpet: "2400 - 2415 sqft",
       area: "2415 sqft",
-      starting: "₹3.65 - 3.90 Cr*",
-      subLabel: "PRICE RANGE"
+      starting: "₹3.90 Cr*",
+      subLabel: "PRICE"
     }
   ],
   floorPlans: [
@@ -142,7 +143,7 @@ window.sobhaData = {
       description: "An efficiently conceived modern residence with sunlit living and dining, comfortable bedroom suite, modern bath, and private viewing balcony.",
       saleable: "734 sqft",
       carpet: "734 sqft",
-      price: "₹1.12 - 1.20 Cr*",
+      price: "₹1.20 Cr*",
       image: "assets/1bhk-floor-plan.webp",
       bullets: [
         "734 sqft thoughtfully planned layout",
@@ -157,7 +158,7 @@ window.sobhaData = {
       description: "A well-proportioned two-bedroom residence crafted for modern families, featuring wide living-dining zones, two bathrooms, and panoramic balcony views.",
       saleable: "1063 sqft",
       carpet: "1050 - 1063 sqft",
-      price: "₹1.60 - 1.70 Cr*",
+      price: "₹1.70 Cr*",
       image: "assets/2bhk-floor-plan.webp",
       bullets: [
         "1063 sqft ergonomic two-bedroom floor plan",
@@ -172,7 +173,7 @@ window.sobhaData = {
       description: "Expansive three-bedroom residence with 2 elegant bathrooms, expansive living-dining hall, modular kitchen utility, and an open balcony overlooking central greens.",
       saleable: "1510 sqft",
       carpet: "1510 sqft",
-      price: "₹2.30 - 2.40 Cr*",
+      price: "₹2.40 Cr*",
       image: "assets/3bhk-2t-floor-plan.webp",
       bullets: [
         "1510 sqft spacious 3 Bed + 2 Toilets configuration",
@@ -187,7 +188,7 @@ window.sobhaData = {
       description: "Grand 3-bedroom residence with 3 attached bathrooms, dedicated foyer, large entertainer balcony, and expansive master bedroom suite.",
       saleable: "1830 sqft",
       carpet: "1830 sqft",
-      price: "₹2.75 - 2.90 Cr*",
+      price: "₹2.90 Cr*",
       image: "assets/3bhk-3t-floor-plan.webp",
       bullets: [
         "1830 sqft grand 3 Bed + 3 Toilets executive suite",
@@ -202,7 +203,7 @@ window.sobhaData = {
       description: "Signature four-bedroom residence with expansive double-volume living spaces, 2 dedicated car parking bays, and bespoke finishes crafted to Sobha's highest standards.",
       saleable: "2091 sqft",
       carpet: "2091 - 2100 sqft",
-      price: "₹3.15 - 3.40 Cr*",
+      price: "₹3.40 Cr*",
       image: "assets/4bhk-luxe-floor-plan.webp",
       bullets: [
         "2091 sqft luxury 4-bedroom palatial layout",
@@ -217,7 +218,7 @@ window.sobhaData = {
       description: "The largest ultra-luxury high-rise residence at Sobha One World: 2415 sqft of opulent space, expansive wrap-around deck, 2 dedicated car parking bays, and unmatched privacy.",
       saleable: "2415 sqft",
       carpet: "2400 - 2415 sqft",
-      price: "₹3.65 - 3.90 Cr*",
+      price: "₹3.90 Cr*",
       image: "assets/4bhk-grande-floor-plan.webp",
       bullets: [
         "2415 sqft maximum-dimension 4-bedroom grande suite",
@@ -520,7 +521,7 @@ window.sobhaData = {
     },
     {
       question: "Is SOBHA OneWorld RERA registered?",
-      answer: "Yes. The project has six phase-wise Karnataka RERA registrations. Buyers can verify the relevant registration details on the Karnataka RERA website."
+      answer: "Yes. The project has Karnataka RERA registration under PRM/KA/RERA/1250/304/PR/080526/008634. Buyers can verify the relevant registration details on the Karnataka RERA website."
     },
     {
       question: "How can I book an apartment at SOBHA OneWorld?",

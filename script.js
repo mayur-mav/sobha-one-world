@@ -1662,7 +1662,7 @@
       // Contextual detection based on button role & placement
       if (btn.classList.contains("button-download-masterplan") || btn.closest(".masterplan-section")) {
         title = "Get The Full Master Plan";
-        subtitle = "The full master plan and row house numbering on WhatsApp within minutes.";
+        subtitle = "The full master plan and tower floor plans on WhatsApp within minutes.";
         submitText = "Download Master Plan";
         source = "Master Plan Download";
       } else if (btn.classList.contains("button-brochure-download") || btn.classList.contains("intro-pdf-download-btn") || btn.closest(".brochure-section")) {
