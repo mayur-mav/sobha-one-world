@@ -1,9 +1,9 @@
 window.sobhaData = {
   // ==========================================================================
-  // Lead Capture API Endpoint (paste your API URL here when ready)
-  // e.g. leadApiUrl: "https://your-backend.com/api/leads",
+  // Lead Capture API Endpoint & Project Configuration
   // ==========================================================================
-  leadApiUrl: "",
+  leadApiUrl: "https://leadapi.homebble.in/formdataRoute/getFormdata",
+  projectName: "Sobha One World",
   reraNo: "PRM/KA/RERA/1250/304/PR/080526/008634",
 
   tagline: "DISCOVER THE NEXT LANDMARK TOWNSHIP",

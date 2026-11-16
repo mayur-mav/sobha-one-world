@@ -611,7 +611,7 @@ h1, h2, h3, p { margin-top: 0; }
   width: 7px;
   height: 7px;
 }
-.custom-dropdown-shell.is-open { z-index: 40; }
+.custom-dropdown-shell.is-open { z-index: 100 !important; }
 .custom-dropdown-shell.is-country .custom-dropdown-list {
   left: 0;
   right: auto;
@@ -619,11 +619,11 @@ h1, h2, h3, p { margin-top: 0; }
 }
 .custom-dropdown-list {
   position: absolute;
-  z-index: 50;
+  z-index: 105 !important;
   top: calc(100% + 5px);
   right: 0;
   left: 0;
-  max-height: min(240px, 42vh);
+  max-height: min(280px, 48vh);
   padding: 5px;
   overflow-y: auto;
   border: 1px solid rgba(197, 155, 78, 0.3);
@@ -639,8 +639,8 @@ h1, h2, h3, p { margin-top: 0; }
   padding: 8px 11px;
   border: 0;
   border-radius: 6px;
-  background: transparent;
-  color: #24364b;
+  background: transparent !important;
+  color: #24364b !important;
   font-family: var(--sans);
   font-size: 13px;
   text-align: left;
@@ -650,8 +650,8 @@ h1, h2, h3, p { margin-top: 0; }
 .custom-dropdown-option:focus-visible,
 .custom-dropdown-option.is-selected {
   outline: none;
-  background: #f5efe3;
-  color: #181613;
+  background: #f5efe3 !important;
+  color: #181613 !important;
 }
 .custom-dropdown-option.is-selected { font-weight: 700; }
 .custom-dropdown-trigger:focus-visible {
@@ -2606,14 +2606,10 @@ figcaption#gallery-caption {
 .popup-country-select:focus {
   border-color: #c5a059;
 }
-.popup-select-arrow {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 11px;
-  color: #3d372e;
-  pointer-events: none;
+.popup-select-arrow,
+.select-arrow-icon,
+.country-arrow-icon {
+  display: none !important;
 }
 .popup-phone-input {
   flex: 1;
@@ -2621,6 +2617,11 @@ figcaption#gallery-caption {
 .popup-select-box {
   position: relative;
   width: 100%;
+  overflow: visible !important;
+  z-index: 25;
+}
+.popup-select-box:has(.custom-dropdown-shell.is-open) {
+  z-index: 100;
 }
 .popup-select {
   width: 100%;
@@ -5184,6 +5185,11 @@ figcaption#gallery-caption {
 .visit-select-box {
   position: relative;
   width: 100%;
+  overflow: visible !important;
+  z-index: 25;
+}
+.visit-select-box:has(.custom-dropdown-shell.is-open) {
+  z-index: 100;
 }
 
 .visit-select {
