@@ -1705,8 +1705,50 @@
     }
   }
 
+  function fallbackClipboardCopy(text, onSuccess) {
+    const el = document.createElement("textarea");
+    el.value = text;
+    el.setAttribute("readonly", "");
+    el.style.position = "absolute";
+    el.style.left = "-9999px";
+    document.body.appendChild(el);
+    el.select();
+    try {
+      document.execCommand("copy");
+      if (typeof onSuccess === "function") onSuccess();
+    } catch (err) {}
+    document.body.removeChild(el);
+  }
+
   // Handle all CTA button clicks across the site
   document.addEventListener("click", (event) => {
+    // 0. Copy phone number triggers
+    const copyPhoneBtn = event.target.closest("[data-copy-phone]");
+    if (copyPhoneBtn) {
+      event.preventDefault();
+      const phoneToCopy = copyPhoneBtn.getAttribute("data-copy-phone") || "+917411662228";
+      const copyLabel = copyPhoneBtn.querySelector(".copy-text") || copyPhoneBtn;
+      const prevLabel = copyLabel.textContent;
+
+      const triggerSuccess = () => {
+        copyPhoneBtn.classList.add("is-copied");
+        copyLabel.textContent = "Copied!";
+        setTimeout(() => {
+          copyPhoneBtn.classList.remove("is-copied");
+          copyLabel.textContent = prevLabel;
+        }, 2200);
+      };
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(phoneToCopy).then(triggerSuccess).catch(() => {
+          fallbackClipboardCopy(phoneToCopy, triggerSuccess);
+        });
+      } else {
+        fallbackClipboardCopy(phoneToCopy, triggerSuccess);
+      }
+      return;
+    }
+
     // 1. Close modal triggers
     if (event.target.closest("[data-close-enquiry-modal]")) {
       event.preventDefault();

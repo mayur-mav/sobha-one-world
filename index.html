@@ -15,7 +15,8 @@
     <noscript>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap">
     </noscript>
-    <link rel="preload" as="image" href="assets/hero.webp" type="image/webp" fetchpriority="high">
+    <link rel="preload" as="image" href="assets/hero-mobile.webp" type="image/webp" media="(max-width: 768px)" fetchpriority="high">
+    <link rel="preload" as="image" href="assets/hero.webp" type="image/webp" media="(min-width: 769px)" fetchpriority="high">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" media="print" onload="this.media='all'">
     <noscript>
       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
@@ -31,10 +32,33 @@
         }
       })();
     </script>
-    <link rel="stylesheet" href="styles.css?v=21.1">
-    <script src="data.js?v=21.1" defer></script>
+    <link rel="stylesheet" href="styles.css?v=29.0">
+    <style>
+      /* Guaranteed mobile overrides: eliminates hero form and ensures background image visibility */
+      @media (max-width: 768px) {
+        .hero-enquiry-card {
+          display: none !important;
+          visibility: hidden !important;
+          opacity: 0 !important;
+          pointer-events: none !important;
+          height: 0 !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          border: none !important;
+          overflow: hidden !important;
+        }
+        .hero-mobile-call-strip {
+          display: inline-flex !important;
+        }
+        .hero-image {
+          object-position: center top !important;
+          filter: none !important;
+        }
+      }
+    </style>
+    <script src="data.js?v=28.0" defer></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
-    <script src="script.js?v=21.1" defer></script>
+    <script src="script.js?v=28.0" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -73,58 +97,37 @@
 
     <main id="main">
       <section class="hero" aria-labelledby="hero-title">
-        <img class="hero-image" src="assets/hero.webp" alt="Sobha One World luxury high-rise residences in Bengaluru" width="1200" height="820" fetchpriority="high" loading="eager" decoding="sync" draggable="false">
+        <picture class="hero-picture">
+          <source media="(max-width: 768px)" srcset="assets/hero-mobile.webp" type="image/webp">
+          <source media="(min-width: 769px)" srcset="assets/hero.webp" type="image/webp">
+          <img class="hero-image" src="assets/hero.webp" alt="Sobha One World luxury high-rise residences in Bengaluru" width="1200" height="820" fetchpriority="high" loading="eager" decoding="sync" draggable="false">
+        </picture>
         <div class="hero-shade"></div>
         <div class="hero-content page-width">
           <div class="hero-copy">
-            <div class="hero-launch-pill">
-              <span>✦ 400 ACRES MEGA INTEGRATED TOWNSHIP • 90M DIAMETER CRICKET GROUND ✦</span>
-            </div>
-
             <h1 id="hero-title" class="hero-title">
-              Sobha One World<br>
-              Greater Whitefield <span class="hero-pipe">|</span> <span class="hero-gold-text">400 Acres Mega Integrated Township<br>
-              &amp; 90-Meter Diameter Cricket Ground</span>
+              <span class="hero-brand-name">Sobha One World</span>
+              <hr />
+              <span class="hero-title-highlight"><span class="hero-gold-text">400 Acres</span> Township</span>
+              <hr />
+              <span class="hero-title-highlight"><span class="hero-gold-text">90 Diameter</span><br /> Cricket Ground</span>
             </h1>
 
-            <p class="hero-description">
-              <span class="desc-desktop">SOBHA’s Mega Integrated Township — a sprawling 400-acre development with Phase 1 across 48 acres, ~3,500 thoughtfully planned residences, 3B + Ground &amp; 1st floor parking + 46 floors, 120,000 sqft Grand Clubhouse, 90-meter diameter Cricket Ground, and serene lake buffer.</span>
-              <span class="desc-mobile">SOBHA’s iconic 400-acre mega township in Greater Whitefield featuring a 90-meter diameter cricket ground and luxury high-rise residences.</span>
-            </p>
-
-            <div class="hero-price-glass">
-              <div class="price-glass-eyebrow">HOMES START FROM</div>
-              <div class="price-glass-main">
-                <span class="price-val">₹1.12 Cr*</span>
-                <span class="price-dot-onwards">• Onwards</span>
-                <span class="price-config-note">1, 2, 3 &amp; 4 BHK — 734 to 2,415 sqft</span>
-              </div>
+            <div class="hero-mobile-call-strip" aria-label="Direct sales contact">
+              <a href="tel:+917411662228" class="hero-call-action" aria-label="Call Sobha One World Sales at +91 74116 62228">
+                <span class="call-action-icon" aria-hidden="true">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </span>
+                <span class="call-action-body">
+                  <span class="call-action-eyebrow">TAP TO CALL SALES</span>
+                  <span class="call-action-number">+91 74116 62228</span>
+                </span>
+              </a>
+              <button type="button" class="hero-copy-action" id="hero-copy-phone" data-copy-phone="+917411662228" aria-label="Copy phone number +91 74116 62228">
+                <svg class="copy-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                <span class="copy-text">Copy</span>
+              </button>
             </div>
-
-            <div class="hero-badges" aria-label="Project highlights">
-              <span class="badge-pill">
-                <svg class="badge-check" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>400-Acre Mega Township</span>
-              </span>
-              <span class="badge-pill">
-                <svg class="badge-check" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>90-Meter Diameter Cricket Ground</span>
-              </span>
-              <span class="badge-pill">
-                <svg class="badge-check" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Phase 1: 48 Acres • 3B+G+1+46 Floors</span>
-              </span>
-              <span class="badge-pill">
-                <svg class="badge-check" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>120,000 Sqft Grand Clubhouse</span>
-              </span>
-            </div>
-
-            <a class="hero-brochure-btn" href="#brochure">
-              <span>Download Brochure</span>
-              <span class="btn-arrow-icon" aria-hidden="true">&darr;</span>
-            </a>
-            <p class="hero-credit-line">Artist's impression · Marketed by an Authorised Channel Partner</p>
           </div>
 
           <form class="hero-enquiry-card" id="hero-enquiry" data-enquiry-form>
@@ -137,12 +140,12 @@
               <p class="card-subtitle">Price list, floor plans and launch availability, same day on call and WhatsApp.</p>
             </div>
 
-            <div class="form-field">
+            <div class="form-field form-field-name">
               <label class="form-label" for="hero-name">NAME</label>
-              <input id="hero-name" name="name" type="text" autocomplete="name" placeholder="Your name" required>
+              <input id="hero-name" name="name" type="text" autocomplete="name" placeholder="Your name">
             </div>
 
-            <div class="form-field">
+            <div class="form-field form-field-phone">
               <label class="form-label" for="hero-phone">PHONE</label>
               <div class="phone-field-group">
                 <select name="countryCode" aria-label="Country calling code" class="phone-country-select">
@@ -166,7 +169,7 @@
               </div>
             </div>
 
-            <div class="form-field">
+            <div class="form-field form-field-home">
               <label class="form-label" for="hero-home">LOOKING FOR</label>
               <div class="custom-select-wrap">
                 <select id="hero-home" name="homeType" class="full-select">
