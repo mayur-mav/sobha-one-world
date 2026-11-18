@@ -1198,7 +1198,7 @@
   const phoneLengthsByCountry = phoneRulesByCountry;
   const leadForms = document.querySelectorAll("form[data-enquiry-form], #video-lead-form");
   const getFieldError = (control) => {
-    const wrapper = control.closest(".phone-field-group, .visit-phone-row, .popup-phone-row, .intro-tel-group, .video-lead-phone-field, .custom-select-wrap, .visit-select-box, .popup-select-box") || control;
+    const wrapper = control.closest(".phone-field-group, .visit-phone-row, .popup-phone-row, .intro-tel-group, .video-lead-phone-field, .wa-input-row, .custom-select-wrap, .visit-select-box, .popup-select-box") || control;
     const error = wrapper.parentElement.querySelector(`.field-error[data-for="${control.id || control.name}"]`);
     if (error && error.dataset.control === (control.id || control.name)) return error;
     const message = document.createElement("span");
@@ -1217,7 +1217,7 @@
   const getPhoneError = (input) => {
     const form = input.form;
     const wrapper = input.closest(".intro-input-row") ||
-      input.closest(".phone-field-group, .visit-phone-row, .popup-phone-row, .intro-tel-group, .video-lead-phone-field");
+      input.closest(".phone-field-group, .visit-phone-row, .popup-phone-row, .intro-tel-group, .video-lead-phone-field, .wa-input-row");
     const parent = wrapper || input.parentElement;
     const key = input.id || input.name;
     let error = parent.parentElement.querySelector(`.field-error[data-for="${key}"]`);
@@ -2513,4 +2513,148 @@
   document.querySelectorAll("img, video").forEach((media) => {
     media.setAttribute("draggable", "false");
   });
+
+  // ==========================================================================
+  // WhatsApp Recurring Lead Popup (Trigger on scroll + periodic re-prompt)
+  // ==========================================================================
+  (function initWhatsAppRecurringPopup() {
+    const waModal = document.querySelector("#whatsapp-lead-modal");
+    const waForm = document.querySelector("#wa-lead-form");
+    const phoneInput = document.querySelector("#wa-phone-input");
+    const countrySelect = document.querySelector("#wa-country-code");
+    if (!waModal || !waForm) return;
+
+    let hasOpenedInitially = false;
+    let recurringTimer = null;
+    const RECURRING_INTERVAL_MS = 5000; // Re-prompt every 5 seconds if dismissed
+
+    function isAnyModalOpen() {
+      const activeModals = document.querySelectorAll(
+        ".modal:not([hidden]), .lead-success-modal:not([hidden]), .lead-fallback-modal:not([hidden]), .gallery-lightbox-modal:not([hidden])"
+      );
+      return activeModals.length > 0;
+    }
+
+    function openWhatsAppPopup() {
+      if (sessionStorage.getItem("sobha_wa_submitted") === "true") return;
+      if (isAnyModalOpen()) {
+        scheduleNextPopup(3000);
+        return;
+      }
+      waModal.removeAttribute("hidden");
+      waModal.classList.add("is-active");
+      document.body.classList.add("modal-open");
+      if (phoneInput) {
+        if (typeof getPhoneError === "function") {
+          const err = getPhoneError(phoneInput);
+          if (err) { err.textContent = ""; err.hidden = true; }
+        }
+        phoneInput.classList.remove("is-invalid");
+        phoneInput.removeAttribute("aria-invalid");
+        setTimeout(() => phoneInput.focus(), 300);
+      }
+    }
+
+    function closeWhatsAppPopup() {
+      waModal.setAttribute("hidden", "");
+      waModal.classList.remove("is-active");
+      document.body.classList.remove("modal-open");
+      // Reschedule recurring popup after 5 seconds
+      scheduleNextPopup(RECURRING_INTERVAL_MS);
+    }
+
+    function scheduleNextPopup(delayMs) {
+      if (recurringTimer) clearTimeout(recurringTimer);
+      if (sessionStorage.getItem("sobha_wa_submitted") === "true") return;
+      recurringTimer = setTimeout(() => {
+        openWhatsAppPopup();
+      }, delayMs);
+    }
+
+    // Trigger on scroll: when user scrolls > 80px, show popup after 1.5 seconds
+    function handleScrollTrigger() {
+      if (hasOpenedInitially) return;
+      if (window.scrollY > 80) {
+        hasOpenedInitially = true;
+        window.removeEventListener("scroll", handleScrollTrigger);
+        setTimeout(() => {
+          openWhatsAppPopup();
+        }, 1500);
+      }
+    }
+
+    window.addEventListener("scroll", handleScrollTrigger, { passive: true });
+
+    // Fallback: if user stays on page without scrolling for 4s, trigger popup
+    setTimeout(() => {
+      if (!hasOpenedInitially && sessionStorage.getItem("sobha_wa_submitted") !== "true") {
+        hasOpenedInitially = true;
+        window.removeEventListener("scroll", handleScrollTrigger);
+        openWhatsAppPopup();
+      }
+    }, 4000);
+
+    // Close button & backdrop handlers
+    waModal.querySelectorAll("[data-close-wa-modal]").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        closeWhatsAppPopup();
+      });
+    });
+
+    // Escape key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !waModal.hasAttribute("hidden")) {
+        closeWhatsAppPopup();
+      }
+    });
+
+    // Form submission
+    waForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      // Enforce full country-specific phone validation
+      if (typeof validateForm === "function" && !validateForm(waForm)) {
+        if (phoneInput) phoneInput.focus();
+        return;
+      }
+
+      const phoneVal = phoneInput ? phoneInput.value.trim() : "";
+      const countryVal = countrySelect ? countrySelect.value : "+91";
+
+      const fullPhone = countryVal + " " + phoneVal;
+
+      // Submit lead to backend
+      if (typeof submitLeadCapture === "function") {
+        submitLeadCapture({
+          phone: fullPhone,
+          name: "WhatsApp Enquiry",
+          email: "",
+          sourceContext: "WhatsApp Recurring Popup",
+          project: "Sobha One World"
+        }, false);
+      }
+
+      // Mark submitted so it stops re-prompting
+      sessionStorage.setItem("sobha_wa_submitted", "true");
+      if (recurringTimer) clearTimeout(recurringTimer);
+
+      // Close modal
+      waModal.setAttribute("hidden", "");
+      waModal.classList.remove("is-active");
+      document.body.classList.remove("modal-open");
+
+      // Open WhatsApp chat directly with prefilled greeting
+      const waMsg = encodeURIComponent("Hi, I am interested in Sobha One World. Please share the launch price list, floor plans and brochure on WhatsApp.");
+      const waUrl = "https://wa.me/917411662228?text=" + waMsg;
+      window.open(waUrl, "_blank", "noopener,noreferrer");
+
+      // Show toast confirmation
+      const toast = document.querySelector("#site-toast");
+      if (toast) {
+        toast.textContent = "Connecting to Sobha One World WhatsApp Sales Desk...";
+        toast.classList.add("is-visible");
+        setTimeout(() => toast.classList.remove("is-visible"), 4000);
+      }
+    });
+  })();
 })();

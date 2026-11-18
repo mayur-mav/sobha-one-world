@@ -32,7 +32,7 @@
         }
       })();
     </script>
-    <link rel="stylesheet" href="styles.css?v=29.0">
+    <link rel="stylesheet" href="styles.css?v=33.0">
     <style>
       /* Guaranteed mobile overrides: eliminates hero form and ensures background image visibility */
       @media (max-width: 768px) {
@@ -56,9 +56,9 @@
         }
       }
     </style>
-    <script src="data.js?v=28.0" defer></script>
+    <script src="data.js?v=33.0" defer></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
-    <script src="script.js?v=28.0" defer></script>
+    <script src="script.js?v=33.0" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -1227,6 +1227,90 @@
       <div class="modal-backdrop" data-close-modal></div>
       <div class="modal-panel"><button class="modal-close" type="button" data-close-modal aria-label="Close video">×</button><p class="eyebrow">A glimpse of home</p><h2 id="tour-title">The Sobha One World lifestyle film</h2><video id="tour-video" controls preload="none" poster="assets/exterior-night.webp" draggable="false"><source src="assets/property-tour.mp4" type="video/mp4"><track kind="captions" src="assets/property-tour.en.vtt" srclang="en" label="English" default>Your browser does not support embedded video.</video><p class="video-note">Illustrative lifestyle footage. Replace with an official project film when available.</p></div>
     </div>
+    <!-- WhatsApp Recurring Lead Popup Modal -->
+    <div class="whatsapp-lead-modal" id="whatsapp-lead-modal" role="dialog" aria-modal="true" aria-labelledby="wa-modal-heading" hidden>
+      <div class="wa-modal-backdrop" data-close-wa-modal></div>
+      <div class="wa-modal-card">
+        <button class="wa-modal-close" type="button" data-close-wa-modal aria-label="Close WhatsApp dialog">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+
+        <!-- WhatsApp Chat Header -->
+        <div class="wa-chat-header">
+          <div class="wa-avatar-wrap">
+            <div class="wa-avatar-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true">
+                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.16 8.16 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23zm4.52-6.17c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.66.31-.23.25-.86.84-.86 2.05 0 1.21.88 2.38 1 2.54.12.17 1.74 2.66 4.22 3.73.59.25 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.17-.48-.29z"/>
+              </svg>
+            </div>
+            <span class="wa-status-dot" aria-hidden="true"></span>
+          </div>
+          <div class="wa-header-info">
+            <div class="wa-header-title-row">
+              <h3 class="wa-header-title" id="wa-modal-heading">Sobha One World</h3>
+              <span class="wa-verified-badge" title="Official WhatsApp Assistant">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="#25D366" aria-hidden="true">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+              </span>
+            </div>
+            <p class="wa-header-subtitle">Official Sales Desk · Online</p>
+          </div>
+        </div>
+
+        <!-- WhatsApp Chat Body -->
+        <div class="wa-chat-body">
+          <div class="wa-chat-bubble">
+            <p class="wa-bubble-greeting">Hello! 👋</p>
+            <p class="wa-bubble-text">
+              Looking for <strong>Sobha One World</strong> pricing &amp; availability? Enter your mobile number below to receive the <strong>Official Launch Price List, Floor Plans &amp; Cost Sheet</strong> directly on your WhatsApp.
+            </p>
+            <span class="wa-bubble-time">Just now <span class="wa-ticks">✓✓</span></span>
+          </div>
+
+          <form class="wa-popup-form" id="wa-lead-form" data-enquiry-form="whatsapp">
+            <input type="hidden" name="sourceContext" value="WhatsApp Recurring Popup">
+            <div class="wa-input-row">
+              <div class="wa-country-select-wrap">
+                <select class="wa-country-select phone-country-select" id="wa-country-code" name="countryCode" aria-label="Country calling code">
+                  <option value="+91" selected>IN +91</option>
+                  <option value="+971">AE +971</option>
+                  <option value="+1">US +1</option>
+                  <option value="+44">UK +44</option>
+                  <option value="+65">SG +65</option>
+                  <option value="+61">AU +61</option>
+                  <option value="+966">SA +966</option>
+                  <option value="+974">QA +974</option>
+                  <option value="+968">OM +968</option>
+                  <option value="+965">KW +965</option>
+                  <option value="+973">BH +973</option>
+                  <option value="+64">NZ +64</option>
+                  <option value="+49">DE +49</option>
+                  <option value="+852">HK +852</option>
+                  <option value="+60">MY +60</option>
+                </select>
+              </div>
+              <input class="wa-phone-input" id="wa-phone-input" name="phone" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="10-digit mobile number" pattern="[6-9][0-9]{9}" maxlength="10" required>
+            </div>
+
+            <button class="wa-submit-btn" type="submit" id="wa-submit-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true">
+                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.16 8.16 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23zm4.52-6.17c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.66.31-.23.25-.86.84-.86 2.05 0 1.21.88 2.38 1 2.54.12.17 1.74 2.66 4.22 3.73.59.25 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.17-.48-.29z"/>
+              </svg>
+              <span>Get Details on WhatsApp</span>
+            </button>
+
+            <p class="wa-privacy-note">
+              🔒 Instant WhatsApp delivery · Direct developer allocation · No spam
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+
     <div class="toast" id="site-toast" role="status" aria-live="polite"></div>
   </body>
 </html>
