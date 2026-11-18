@@ -14,13 +14,13 @@ window.sobhaData = {
   description: "One of the largest, most iconic, and future-ready developments by SOBHA — crafted for those who aspire for grand living.",
 
   facts: [
-    { value: "360 Acres", label: "Integrated Township" },
+    { value: "400 Acres", label: "Integrated Township" },
     { value: "48 Acres", label: "Phase 1 Development" },
     { value: "3B+G+1+46", label: "Floors Structure" },
     { value: "~3,500", label: "Planned Residences" }
   ],
   statsRibbon: [
-    { value: "360 Acres", label: "SPRAWLING TOWNSHIP" },
+    { value: "400 Acres", label: "SPRAWLING TOWNSHIP" },
     { value: "48 Acres", label: "PHASE 1 DEVELOPMENT" },
     { value: "3B+G+1+46", label: "FLOORS STRUCTURE" },
     { value: "~3,500", label: "PLANNED RESIDENCES" },
@@ -32,8 +32,8 @@ window.sobhaData = {
   projectDetails: [
     { label: "PROJECT", value: "Sobha One World (Sobha One), Off Old Madras Road / NH-75, Hoskote Corridor, Greater Whitefield, Bangalore 562114" },
     { label: "DEVELOPER", value: "SOBHA Limited · India's Only Backward-Integrated Real Estate Player" },
-    { label: "CONFIGURATIONS", value: "1 BHK (734 sqft), 2 BHK (1063 sqft), 3 BHK (1510 & 1830 sqft), 4 BHK (2091 & 2415 sqft)" },
-    { label: "LAND & SCALE", value: "Sprawling 360-acre integrated township · Phase 1: 48 acres · 3B+G+1st parking+46 floors · ~3,500 residences" },
+    { label: "CONFIGURATIONS", value: "1 BHK, 2 BHK, 3 BHK, 4 BHK" },
+    { label: "LAND & SCALE", value: "Sprawling 400-acre integrated township · Phase 1: 48 acres · 3B+G+1st parking+46 floors · ~3,500 residences" },
     { label: "PRICE", value: "From ₹1.12 Cr* (₹1.12 - 3.90 Cr*)", isPrice: true, buttonText: "Get Price List →" },
     { label: "STATUS", value: "New Launch · Phase 1 Development" },
     {
@@ -43,18 +43,18 @@ window.sobhaData = {
     }
   ],
   specHighlights: [
-    "Sprawling 360-Acre Township",
+    "Sprawling 400-Acre Township",
     "Phase 1: 48 Acres (G+46 Floors)",
     "120,000 Sqft Grand Clubhouse",
-    "Private Cricket Stadium",
+    "90m Diameter Cricket Ground",
     "Central Plaza (1000+ Capacity)",
     "Dedicated Pet Parks"
   ],
   highlights: [
-    "Sprawling 360-acre integrated township — Phase 1: 48 acres of premium development.",
+    "Sprawling 400-acre integrated township — Phase 1: 48 acres of premium development.",
     "Iconic high-rise tower structure: 3B + Ground & 1st floor car parking + 46 floors.",
     "~3,500 thoughtfully planned residences surrounded by grand central greens, serene lake buffer & lush landscapes.",
-    "120000 sqft Grand Clubhouse, Private Cricket Stadium, Mega Sports Arena & 350-meter Running Track.",
+    "120000 sqft Grand Clubhouse, 90-Meter Diameter Cricket Ground, Mega Sports Arena & 350-meter Running Track.",
     "Designed as a “Global Indian District” featuring Central Plaza (1000+ capacity), dedicated pet parks & wide boulevards.",
     "High-street retail, commercial hubs & seamless connectivity to East Bengaluru's next growth hub."
   ],
@@ -70,15 +70,15 @@ window.sobhaData = {
     { title: "Strong Residential Demand", text: "Robust rental and capital appreciation potential backed by major surrounding employment hubs." }
   ],
   overviewShowcase: [
-    { src: "assets/aerial-view.webp", alt: "Sobha One World 360-acre mega integrated township and 46-floor skyline towers", caption: "360-ACRE INTEGRATED TOWNSHIP — PHASE 1: 48 ACRES" },
+    { src: "assets/aerial-view.webp", alt: "Sobha One World 400-acre mega integrated township and 46-floor skyline towers", caption: "400-ACRE INTEGRATED TOWNSHIP — PHASE 1: 48 ACRES" },
     { src: "assets/main-entrance.webp", alt: "Grand main entrance gate and wide boulevards at Sobha One World", caption: "GLOBAL INDIAN DISTRICT — GRAND ENTRANCE BOULEVARD" },
     { src: "assets/amenities-page.webp", alt: "120000 sqft Grand Clubhouse at Sobha One World", caption: "120,000 SQFT GRAND CLUBHOUSE & LIFESTYLE AMENITIES" },
-    { src: "assets/recreation.webp", alt: "Private Cricket Stadium and Mega Sports Arena at Sobha One World", caption: "PRIVATE CRICKET STADIUM & MEGA SPORTS ARENA" },
+    { src: "assets/recreation.webp", alt: "90-Meter Diameter Cricket Ground and Mega Sports Arena at Sobha One World", caption: "90-METER DIAMETER CRICKET GROUND & MEGA SPORTS ARENA" },
     { src: "assets/interior-view.webp", alt: "Thoughtfully planned residences with panoramic balcony views", caption: "THOUGHTFULLY PLANNED 1, 2, 3 & 4 BHK RESIDENCES" },
     { src: "assets/garden-walkway.webp", alt: "Grand central greens, serene lake buffer and lush landscapes", caption: "GRAND CENTRAL GREENS & SERENE LAKE BUFFER" }
   ],
   brochureItems: [
-    "Complete 360-acre township master plan with Phase 1 48-acre layout blueprint",
+    "Complete 400-acre township master plan with Phase 1 48-acre layout blueprint",
     "Floor plans and unit layouts for 1 BHK (734 sqft), 2 BHK (1063 sqft), 3 BHK (1510 & 1830 sqft), 4 BHK (2091 & 2415 sqft)",
     "Tower elevation specifications: 3B + Ground & 1st floor car parking + 46 floors",
     "Official price sheet, exclusive launch payment plans, and priority access guidelines"
@@ -203,7 +203,7 @@ window.sobhaData = {
       bullets: [
         "1830 sqft grand 3 Bed + 3 Toilets executive suite",
         "All bedrooms with dedicated bathroom access and premium fittings",
-        "Unobstructed views across 360-acre integrated township greens"
+        "Unobstructed views across 400-acre integrated township greens"
       ]
     },
     {
@@ -218,7 +218,7 @@ window.sobhaData = {
       bullets: [
         "2091 sqft luxury 4-bedroom palatial layout",
         "Includes 2 dedicated covered car parking spaces",
-        "Panoramic township views, serene lake buffer & Private Cricket Stadium access"
+        "Panoramic township views, serene lake buffer & 90-Meter Diameter Cricket Ground access"
       ]
     },
     {
@@ -241,7 +241,7 @@ window.sobhaData = {
     {
       name: "1 & 2 BHK Residences",
       label: "734 & 1063 sqft",
-      description: "Thoughtfully planned 1 BHK (734 sqft · ₹1.12 - 1.20 Cr) and 2 BHK (1063 sqft · ₹1.60 - 1.70 Cr) residences in a 360-acre integrated township.",
+      description: "Thoughtfully planned 1 BHK (734 sqft · ₹1.12 - 1.20 Cr) and 2 BHK (1063 sqft · ₹1.60 - 1.70 Cr) residences in a 400-acre integrated township.",
       image: "assets/bedroom-study.webp",
       imageAlt: "Sobha One World luxury 1 & 2 BHK residences",
       size: "734 & 1063 sqft",
@@ -259,7 +259,7 @@ window.sobhaData = {
   ],
   amenitySlides: [
     { src: "assets/amenities-page.webp", title: "120000 sqft Grand Clubhouse", alt: "120000 sqft Grand Clubhouse at Sobha One World" },
-    { src: "assets/recreation.webp", title: "Private Cricket Stadium", alt: "Private Cricket Stadium at Sobha One World" },
+    { src: "assets/recreation.webp", title: "90m Diameter Cricket Ground", alt: "90-Meter Diameter Cricket Ground at Sobha One World" },
     { src: "assets/lifestyle.webp", title: "Mega Sports Arena & 350m Running Track", alt: "Mega Sports Arena and 350-meter running track" },
     { src: "assets/garden-walkway.webp", title: "Grand Central Greens & Lake Buffer", alt: "Serene lake buffer and grand central greens" },
     { src: "assets/globe-fountain.webp", title: "Central Plaza (1000+ Capacity)", alt: "Central Plaza with 1000+ person gathering capacity" },
@@ -275,12 +275,12 @@ window.sobhaData = {
     {
       category: "SPORTS & ATHLETICS",
       icon: "sports",
-      pills: ["Private Cricket Stadium", "Mega Sports Arena", "350-meter Running Track", "Sports Zones", "Outdoor Fitness Areas"]
+      pills: ["90m Diameter Cricket Ground", "Mega Sports Arena", "350-meter Running Track", "Sports Zones", "Outdoor Fitness Areas"]
     },
     {
       category: "NATURE & ENVIRONMENT",
       icon: "landscape",
-      pills: ["Grand Central Greens", "Serene Lake Buffer", "Lush Landscapes", "360-Acre Master Township", "48-Acre Phase 1 Development"]
+      pills: ["Grand Central Greens", "Serene Lake Buffer", "Lush Landscapes", "400-Acre Master Township", "48-Acre Phase 1 Development"]
     }
   ],
   projectGallery: [
@@ -288,7 +288,7 @@ window.sobhaData = {
       src: "assets/aerial-view.webp",
       tag: "TOWNSHIP",
       credit: "ARTIST'S IMPRESSION",
-      alt: "Sprawling 360-acre integrated township and 46-floor towers at Sobha One World"
+      alt: "Sprawling 400-acre integrated township and 46-floor towers at Sobha One World"
     },
     {
       src: "assets/main-entrance.webp",
@@ -312,7 +312,7 @@ window.sobhaData = {
       src: "assets/recreation.webp",
       tag: "SPORTS",
       credit: "ARTIST'S IMPRESSION",
-      alt: "Private Cricket Stadium and Mega Sports Arena"
+      alt: "90-Meter Diameter Cricket Ground and Mega Sports Arena"
     },
     {
       src: "assets/garden-walkway.webp",
@@ -431,22 +431,22 @@ window.sobhaData = {
     { name: "Marathahalli / Bellandur", detail: "35–40 mins · Major IT employment corridor" }
   ],
   approvals: [
-    { value: "360-Acre Township", label: "SOBHA MEGA INTEGRATED TOWNSHIP" },
+    { value: "400-Acre Township", label: "SOBHA MEGA INTEGRATED TOWNSHIP" },
     { value: "Phase 1: 48 Acres", label: "PREMIUM DEVELOPMENT" },
     { value: "3B+G+1+46 Floors", label: "HIGH-RISE RESIDENTIAL TOWERS" },
     { value: "SOBHA Limited", label: "DEVELOPED BY SOBHA" }
   ],
   details: [
-    { icon: "01", title: "Sprawling 360-Acre Township", text: "Phase 1 spans 48 acres of premium development with ~3,500 thoughtfully planned residences." },
+    { icon: "01", title: "Sprawling 400-Acre Township", text: "Phase 1 spans 48 acres of premium development with ~3,500 thoughtfully planned residences." },
     { icon: "02", title: "3B + G & 1st Floor Parking + 46 Floors", text: "Tower structure designed with 3 basements, ground & 1st floor car parking, and 46 residential floors." },
     { icon: "03", title: "120,000 Sqft Grand Clubhouse", text: "Multiple grand clubhouses, sports zones, lifestyle amenities, and an expansive 120,000 sqft main clubhouse." },
-    { icon: "04", title: "Private Cricket Stadium & Sports Arena", text: "Features a Private Cricket Stadium, Mega Sports Arena, and a 350-meter running track." },
+    { icon: "04", title: "90m Diameter Cricket Ground & Sports Arena", text: "Features a 90-Meter Diameter Cricket Ground, Mega Sports Arena, and a 350-meter running track." },
     { icon: "05", title: "Central Plaza & Pet Parks", text: "Designed as a “Global Indian District” with Central Plaza (1000+ capacity) and dedicated pet parks." },
     { icon: "06", title: "Grand Central Greens & Lake Buffer", text: "Abundant green spaces, serene lake buffer & lush landscapes with high-street retail and commercial hubs." }
   ],
   masterplanNotes: [
     {
-      title: "Sprawling 360-Acre Township (Phase 1: 48 Acres):",
+      title: "Sprawling 400-Acre Township (Phase 1: 48 Acres):",
       text: "Comprising ~3,500 thoughtfully planned residences with 3 Basements + Ground & 1st floor car parking + 46 floors."
     },
     {
@@ -454,8 +454,8 @@ window.sobhaData = {
       text: "120,000 sqft Grand Clubhouse, Central Plaza with 1000+ capacity, high-street retail, and commercial hubs."
     },
     {
-      title: "Private Cricket Stadium & Mega Sports Arena:",
-      text: "Private Cricket Stadium, Mega Sports Arena, and a 350-meter Running Track for township athletes."
+      title: "90-Meter Diameter Cricket Ground & Mega Sports Arena:",
+      text: "90-Meter Diameter Cricket Ground, Mega Sports Arena, and a 350-meter Running Track for township athletes."
     },
     {
       title: "Serene Lake Buffer & Dedicated Pet Parks:",
@@ -473,7 +473,7 @@ window.sobhaData = {
     },
     {
       category: "CLUBHOUSE & SPORTS AMENITIES",
-      text: "120000 sqft Grand Clubhouse, Private Cricket Stadium, Mega Sports Arena, 350-meter running track, and multiple lifestyle zones."
+      text: "120000 sqft Grand Clubhouse, 90-Meter Diameter Cricket Ground, Mega Sports Arena, 350-meter running track, and multiple lifestyle zones."
     },
     {
       category: "COMMUNITY & RETAIL",
@@ -491,10 +491,10 @@ window.sobhaData = {
   developer: {
     paragraphs: [
       "Sobha One World is <strong>SOBHA’s Mega Integrated Township</strong> — one of the largest, most iconic, and future-ready developments by SOBHA, crafted for those who aspire for grand living.",
-      "Backed by SOBHA's benchmark track record, this 360-acre landmark township offers ~3,500 thoughtfully planned residences, a 120,000 sqft Grand Clubhouse, Private Cricket Stadium, and world-class infrastructure in East Bengaluru's next growth hub."
+      "Backed by SOBHA's benchmark track record, this 400-acre landmark township offers ~3,500 thoughtfully planned residences, a 120,000 sqft Grand Clubhouse, 90-Meter Diameter Cricket Ground, and world-class infrastructure in East Bengaluru's next growth hub."
     ],
     stats: [
-      { value: "360 Acres", label: "MEGA TOWNSHIP" },
+      { value: "400 Acres", label: "MEGA TOWNSHIP" },
       { value: "48 Acres", label: "PHASE 1 DEVELOPMENT" },
       { value: "~3,500", label: "PLANNED RESIDENCES" },
       { value: "SOBHA", label: "ICONIC DEVELOPER" }
