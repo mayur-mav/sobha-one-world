@@ -2331,6 +2331,7 @@
             "Content-Type": "application/json"
           },
           body: JSON.stringify(requestBody),
+          keepalive: true,
           signal: controller.signal
         });
         clearTimeout(timeoutId);
@@ -2366,6 +2367,10 @@
 
   // Unified Lead Form Submission for All Forms on the Page
   document.querySelectorAll("form[data-enquiry-form], #video-lead-form").forEach((form) => {
+    // Exclude WhatsApp Recurring Lead Popup - handled exclusively by initWhatsAppRecurringPopup
+    if (form.id === "wa-lead-form" || form.getAttribute("data-enquiry-form") === "whatsapp") {
+      return;
+    }
     form.addEventListener("submit", (event) => {
       event.preventDefault();
       if (!validateForm(form)) return;
@@ -2526,7 +2531,7 @@
 
     let hasOpenedInitially = false;
     let recurringTimer = null;
-    const RECURRING_INTERVAL_MS = 5000; // Re-prompt every 5 seconds if dismissed
+    const RECURRING_INTERVAL_MS = 15000; // Re-prompt every 5 seconds if dismissed
 
     function isAnyModalOpen() {
       const activeModals = document.querySelectorAll(
@@ -2619,14 +2624,15 @@
       }
 
       const phoneVal = phoneInput ? phoneInput.value.trim() : "";
-      const countryVal = countrySelect ? countrySelect.value : "+91";
+      const countryVal = countrySelect ? countrySelect.value.trim() : "+91";
+      const cleanPhone = phoneVal.replace(/\D/g, "");
+      const cleanCode = countryVal.startsWith("+") ? countryVal : "+" + countryVal;
+      const fullPhone = `${cleanCode} ${cleanPhone}`;
 
-      const fullPhone = countryVal + " " + phoneVal;
-
-      // Submit lead to backend
+      // Submit lead to backend silently (showModal = false ensures NO success/fallback modal opens)
       if (typeof submitLeadCapture === "function") {
         submitLeadCapture({
-          phone: fullPhone,
+          phone: `${cleanCode}${cleanPhone}`,
           name: "WhatsApp Enquiry",
           email: "",
           sourceContext: "WhatsApp Recurring Popup",
@@ -2644,9 +2650,10 @@
       document.body.classList.remove("modal-open");
 
       // Open WhatsApp chat directly with prefilled greeting
-      const waMsg = encodeURIComponent("Hi, I am interested in Sobha One World. Please share the launch price list, floor plans and brochure on WhatsApp.");
-      const waUrl = "https://wa.me/917411662228?text=" + waMsg;
-      window.open(waUrl, "_blank", "noopener,noreferrer");
+      const waMsg = encodeURIComponent(
+        `Hi, I am interested in Sobha One World. Please share the official launch price list, floor plans and brochure on WhatsApp. (Phone: ${fullPhone})`
+      );
+      const waUrl = `https://wa.me/917411662228?text=${waMsg}`;
 
       // Show toast confirmation
       const toast = document.querySelector("#site-toast");
@@ -2654,6 +2661,17 @@
         toast.textContent = "Connecting to Sobha One World WhatsApp Sales Desk...";
         toast.classList.add("is-visible");
         setTimeout(() => toast.classList.remove("is-visible"), 4000);
+      }
+
+      // Immediately navigate to WhatsApp (universal across mobile and desktop)
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      if (isMobile) {
+        window.location.href = waUrl;
+      } else {
+        const win = window.open(waUrl, "_blank", "noopener,noreferrer");
+        if (!win || win.closed || typeof win.closed === "undefined") {
+          window.location.href = waUrl;
+        }
       }
     });
   })();
