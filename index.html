@@ -171,12 +171,12 @@
               <label class="form-label" for="hero-home">LOOKING FOR</label>
               <div class="custom-select-wrap">
                 <select id="hero-home" name="homeType" class="full-select">
-                  <option value="1 BHK (734 sqft · ₹1.12 - 1.20 Cr)">1 BHK — 734 sqft (₹1.12 - 1.20 Cr*)</option>
-                  <option value="2 BHK (1063 sqft · ₹1.60 - 1.70 Cr)" selected>2 BHK — 1063 sqft (₹1.60 - 1.70 Cr*)</option>
-                  <option value="3 BHK + 2T (1510 sqft · ₹2.30 - 2.40 Cr)">3 BHK + 2T — 1510 sqft (₹2.30 - 2.40 Cr*)</option>
-                  <option value="3 BHK + 3T (1830 sqft · ₹2.75 - 2.90 Cr)">3 BHK + 3T — 1830 sqft (₹2.75 - 2.90 Cr*)</option>
-                  <option value="4 BHK Luxe (2 car park) (2091 sqft · ₹3.15 - 3.40 Cr)">4 BHK Luxe (2 car park) — 2091 sqft (₹3.15 - 3.40 Cr*)</option>
-                  <option value="4 BHK Grande (2 car park) (2415 sqft · ₹3.65 - 3.90 Cr)">4 BHK Grande (2 car park) — 2415 sqft (₹3.65 - 3.90 Cr*)</option>
+                  <option value="1 BHK">1 BHK</option>
+                  <option value="2 BHK" selected>2 BHK</option>
+                  <option value="3 BHK + 2T">3 BHK + 2T</option>
+                  <option value="3 BHK + 3T">3 BHK + 3T</option>
+                  <option value="4 BHK Luxe">4 BHK Luxe</option>
+                  <option value="4 BHK Grande">4 BHK Grande</option>
                 </select>
               </div>
             </div>
@@ -298,44 +298,42 @@
                   <span class="specs-header-title">KEY PROJECT SPECIFICATIONS</span>
                   <span class="specs-header-badge">RERA ON RECORD</span>
                 </div>
-                <div class="spec-row">
-                  <div class="spec-label">PROJECT</div>
-                  <div class="spec-value">Sobha One World (Sobha One), Off Old Madras Road / NH-75, Hoskote Corridor, Greater Whitefield, Bangalore 562114</div>
-                </div>
-                <div class="spec-row">
-                  <div class="spec-label">DEVELOPER</div>
-                  <div class="spec-value">SOBHA Limited &middot; India's Only Backward-Integrated Real Estate Player</div>
-                </div>
-                <div class="spec-row">
-                  <div class="spec-label">CONFIGURATIONS</div>
-                  <div class="spec-value">1 BHK (734 sqft), 2 BHK (1063 sqft), 3 BHK (1510 &amp; 1830 sqft), 4 BHK (2091 &amp; 2415 sqft)</div>
-                </div>
-                <div class="spec-row">
-                  <div class="spec-label">LAND &amp; SCALE</div>
-                  <div class="spec-value">Sprawling 360-acre integrated township &middot; Phase 1: 48 acres &middot; 3B+G+1st parking+46 floors &middot; ~3,500 residences</div>
-                </div>
-                <div class="spec-row">
-                  <div class="spec-label">SALEABLE AREA</div>
-                  <div class="spec-value">734 to 2,415 sqft (1 BHK: 734 | 2 BHK: 1063 | 3 BHK: 1510 &amp; 1830 | 4 BHK: 2091 &amp; 2415)</div>
-                </div>
-                <div class="spec-row spec-row-price">
-                  <div class="spec-label">PRICE</div>
-                  <div class="spec-value">
-                    <span class="spec-price-strong">From &#8377;1.12 Cr* (&#8377;1.12 - 3.90 Cr*)</span>
-                    <button class="spec-quote-btn" type="button" data-scroll-enquire>Get Price List &rarr;</button>
+                <div id="project-specs-rows">
+                  <div class="spec-row">
+                    <div class="spec-label">PROJECT</div>
+                    <div class="spec-value">Sobha One World (Sobha One), Off Old Madras Road / NH-75, Hoskote Corridor, Greater Whitefield, Bangalore 562114</div>
+                  </div>
+                  <div class="spec-row">
+                    <div class="spec-label">DEVELOPER</div>
+                    <div class="spec-value">SOBHA Limited &middot; India's Only Backward-Integrated Real Estate Player</div>
+                  </div>
+                  <div class="spec-row">
+                    <div class="spec-label">CONFIGURATIONS</div>
+                    <div class="spec-value">1 BHK (734 sqft), 2 BHK (1063 sqft), 3 BHK (1510 &amp; 1830 sqft), 4 BHK (2091 &amp; 2415 sqft)</div>
+                  </div>
+                  <div class="spec-row">
+                    <div class="spec-label">LAND &amp; SCALE</div>
+                    <div class="spec-value">Sprawling 360-acre integrated township &middot; Phase 1: 48 acres &middot; 3B+G+1st parking+46 floors &middot; ~3,500 residences</div>
+                  </div>
+                  <div class="spec-row spec-row-price">
+                    <div class="spec-label">PRICE</div>
+                    <div class="spec-value">
+                      <span class="spec-price-strong">From &#8377;1.12 Cr* (&#8377;1.12 - 3.90 Cr*)</span>
+                      <button class="spec-quote-btn" type="button" data-scroll-enquire>Get Price List &rarr;</button>
+                    </div>
+                  </div>
+                  <div class="spec-row">
+                    <div class="spec-label">STATUS</div>
+                    <div class="spec-value">New Launch &middot; Phase 1 Development</div>
+                  </div>
+                  <div class="spec-row spec-row-rera">
+                    <div class="spec-label">K-RERA NO.</div>
+                    <div class="spec-value rera-value">
+                      <span>Official Registration: PRM/KA/RERA/1250/304/PR/080526/008634</span>
+                    </div>
                   </div>
                 </div>
-                <div class="spec-row">
-                  <div class="spec-label">STATUS</div>
-                  <div class="spec-value">New Launch &middot; Phase 1 Development</div>
-                </div>
-                <div class="spec-row spec-row-rera">
-                  <div class="spec-label">K-RERA NO.</div>
-                  <div class="spec-value rera-value">
-                    <span>Official Registration: PRM/KA/RERA/1250/304/PR/080526/008634</span>
-                  </div>
-                </div>
-                <div class="intro-chateau-badges">
+                <div class="intro-chateau-badges" id="project-spec-badges">
                   <h3 class="intro-highlights-heading">PROJECT HIGHLIGHTS</h3>
                   <span class="intro-badge">&#10022; Sprawling 360-Acre Township</span>
                   <span class="intro-badge">&#10022; Phase 1: 48 Acres (G+46 Floors)</span>
@@ -487,7 +485,7 @@
             <div class="section-kicker"><span>— INVESTMENT —</span></div>
             <h2 class="pricing-heading-title">Sobha One World <em>Price List</em></h2>
             <p class="pricing-lead-text">
-              1 BHK (734 sqft): ₹1.12 - 1.20 Cr* · 2 BHK (1063 sqft): ₹1.60 - 1.70 Cr* · 3 BHK + 2T (1510 sqft): ₹2.30 - 2.40 Cr* · 3 BHK + 3T (1830 sqft): ₹2.75 - 2.90 Cr* · 4 BHK Luxe with 2 car parks (2091 sqft): ₹3.15 - 3.40 Cr* · 4 BHK Grande with 2 car parks (2415 sqft): ₹3.65 - 3.90 Cr*. Connect now for exclusive details &amp; priority access.
+              Explore six luxury high-rise configurations with tailored payment schedules and launch benefits. Configuration-wise pricing depends on floor band, tower orientation (park-facing vs lake-facing) and car parking allotment and is shared on request. Unlock the official price sheet and launch availability below.
             </p>
           </div>
 
@@ -597,7 +595,7 @@
             <div class="section-kicker"><span>— HOMES —</span></div>
             <h2 class="floorplans-heading-title">Floor Plans &amp;<br class="mobile-br"><em>Unit Sizes</em></h2>
             <p class="floorplans-lead-text">
-              Six luxury high-rise configurations, all taken from the developer's official unit plan set: 1 BHK (734 sq ft), 2 BHK (1,063 sq ft), 3 BHK + 2T (1,510 sq ft), 3 BHK + 3T (1,830 sq ft), 4 BHK Luxe (2,091 sq ft), and 4 BHK Grande (2,415 sq ft). Figures are saleable areas for each typology; the RERA carpet area is shown alongside.
+              Six distinct high-rise luxury configurations, all taken from the developer's official unit plan set (1 BHK, 2 BHK, 3 BHK + 2T, 3 BHK + 3T, 4 BHK Luxe and 4 BHK Grande). Unlock each configuration below to view detailed architectural drawings, carpet breakup and unit dimensions.
             </p>
           </div>
 
@@ -804,12 +802,12 @@
                 <label class="visit-label" for="visit-config">LOOKING FOR</label>
                 <div class="visit-select-box">
                   <select class="visit-select" id="visit-config" name="homeType">
-                    <option value="1 BHK (734 sqft · ₹1.12 - 1.20 Cr)">1 BHK — 734 sqft (₹1.12 - 1.20 Cr*)</option>
-                    <option value="2 BHK (1063 sqft · ₹1.60 - 1.70 Cr)" selected>2 BHK — 1063 sqft (₹1.60 - 1.70 Cr*)</option>
-                    <option value="3 BHK + 2T (1510 sqft · ₹2.30 - 2.40 Cr)">3 BHK + 2T — 1510 sqft (₹2.30 - 2.40 Cr*)</option>
-                    <option value="3 BHK + 3T (1830 sqft · ₹2.75 - 2.90 Cr)">3 BHK + 3T — 1830 sqft (₹2.75 - 2.90 Cr*)</option>
-                    <option value="4 BHK Luxe (2 car park) (2091 sqft · ₹3.15 - 3.40 Cr)">4 BHK Luxe (2 car park) — 2091 sqft (₹3.15 - 3.40 Cr*)</option>
-                    <option value="4 BHK Grande (2 car park) (2415 sqft · ₹3.65 - 3.90 Cr)">4 BHK Grande (2 car park) — 2415 sqft (₹3.65 - 3.90 Cr*)</option>
+                    <option value="1 BHK">1 BHK</option>
+                    <option value="2 BHK" selected>2 BHK</option>
+                    <option value="3 BHK + 2T">3 BHK + 2T</option>
+                    <option value="3 BHK + 3T">3 BHK + 3T</option>
+                    <option value="4 BHK Luxe">4 BHK Luxe</option>
+                    <option value="4 BHK Grande">4 BHK Grande</option>
                   </select>
                 </div>
               </div>
@@ -1062,12 +1060,12 @@
             <label class="popup-label" for="popup-config">LOOKING FOR</label>
             <div class="popup-select-box">
               <select class="popup-select" id="popup-config" name="homeType">
-                <option value="1 BHK (734 sqft · ₹1.12 - 1.20 Cr)">1 BHK — 734 sqft (₹1.12 - 1.20 Cr*)</option>
-                <option value="2 BHK (1063 sqft · ₹1.60 - 1.70 Cr)" selected>2 BHK — 1063 sqft (₹1.60 - 1.70 Cr*)</option>
-                <option value="3 BHK + 2T (1510 sqft · ₹2.30 - 2.40 Cr)">3 BHK + 2T — 1510 sqft (₹2.30 - 2.40 Cr*)</option>
-                <option value="3 BHK + 3T (1830 sqft · ₹2.75 - 2.90 Cr)">3 BHK + 3T — 1830 sqft (₹2.75 - 2.90 Cr*)</option>
-                <option value="4 BHK Luxe (2 car park) (2091 sqft · ₹3.15 - 3.40 Cr)">4 BHK Luxe (2 car park) — 2091 sqft (₹3.15 - 3.40 Cr*)</option>
-                <option value="4 BHK Grande (2 car park) (2415 sqft · ₹3.65 - 3.90 Cr)">4 BHK Grande (2 car park) — 2415 sqft (₹3.65 - 3.90 Cr*)</option>
+                <option value="1 BHK">1 BHK</option>
+                <option value="2 BHK" selected>2 BHK</option>
+                <option value="3 BHK + 2T">3 BHK + 2T</option>
+                <option value="3 BHK + 3T">3 BHK + 3T</option>
+                <option value="4 BHK Luxe">4 BHK Luxe</option>
+                <option value="4 BHK Grande">4 BHK Grande</option>
               </select>
             </div>
           </div>

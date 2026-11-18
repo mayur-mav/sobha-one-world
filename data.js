@@ -6,6 +6,9 @@ window.sobhaData = {
   projectName: "Sobha One World",
   reraNo: "PRM/KA/RERA/1250/304/PR/080526/008634",
 
+  pricingLeadText: "Explore six luxury high-rise configurations with tailored payment schedules and launch benefits. Configuration-wise pricing depends on floor band, tower orientation (park-facing vs lake-facing) and car parking allotment and is shared on request. Unlock the official price sheet and launch availability below.",
+  floorplansLeadText: "Six distinct high-rise luxury configurations, all taken from the developer's official unit plan set (1 BHK, 2 BHK, 3 BHK + 2T, 3 BHK + 3T, 4 BHK Luxe and 4 BHK Grande). Unlock each configuration below to view detailed architectural drawings, carpet breakup and unit dimensions.",
+
   tagline: "DISCOVER THE NEXT LANDMARK TOWNSHIP",
   subTagline: "SOBHA’s Mega Integrated Township · Sobha One World",
   description: "One of the largest, most iconic, and future-ready developments by SOBHA — crafted for those who aspire for grand living.",
@@ -27,18 +30,25 @@ window.sobhaData = {
     { value: "₹1.12 Cr*", label: "STARTING PRICE" }
   ],
   projectDetails: [
-    { label: "Project", value: "Sobha One World — SOBHA’s Mega Integrated Township" },
-    { label: "Developer", value: "SOBHA Limited" },
-    { label: "Land & Scale", value: "Sprawling 360-acre integrated township · Phase 1: 48 acres of premium development" },
-    { label: "Structure", value: "3B + Ground & 1st floor car parking + 46 floors" },
-    { label: "Residences", value: "~3,500 thoughtfully planned residences" },
-    { label: "Design Vision", value: "Designed as a “Global Indian District” with grand central greens & serene lake buffer" },
-    { label: "Configurations", value: "1 BHK (734 sqft), 2 BHK (1063 sqft), 3 BHK (1510 & 1830 sqft), 4 BHK (2091 & 2415 sqft)" },
-    { label: "Pricing Range", value: "₹1.12 Cr to ₹3.90 Cr* (1 BHK from ₹1.12 Cr*, 2 BHK from ₹1.60 Cr*, 3 BHK from ₹2.30 Cr*, 4 BHK from ₹3.15 Cr*)" },
-    { label: "Signature Amenities", value: "Private Cricket Stadium, 120000 sqft Grand Clubhouse, Central Plaza (1000+ capacity), Mega Sports Arena, 350-meter Running Track, Dedicated Pet Parks" },
-    { label: "Township Features", value: "High-street retail, commercial hubs, wide boulevards & multiple grand clubhouses" },
-    { label: "Strategic Location", value: "Hoskote Junction (2 mins), STRR / Airport Road (5–10 mins), KR Puram (10 mins), Whitefield Metro (15 mins), Airport (25–30 mins), Marathahalli / Bellandur (35–40 mins)" },
-    { label: "Target Audience", value: "Families seeking a premium long-term lifestyle & smart investors targeting early-stage appreciation backed by SOBHA" }
+    { label: "PROJECT", value: "Sobha One World (Sobha One), Off Old Madras Road / NH-75, Hoskote Corridor, Greater Whitefield, Bangalore 562114" },
+    { label: "DEVELOPER", value: "SOBHA Limited · India's Only Backward-Integrated Real Estate Player" },
+    { label: "CONFIGURATIONS", value: "1 BHK (734 sqft), 2 BHK (1063 sqft), 3 BHK (1510 & 1830 sqft), 4 BHK (2091 & 2415 sqft)" },
+    { label: "LAND & SCALE", value: "Sprawling 360-acre integrated township · Phase 1: 48 acres · 3B+G+1st parking+46 floors · ~3,500 residences" },
+    { label: "PRICE", value: "From ₹1.12 Cr* (₹1.12 - 3.90 Cr*)", isPrice: true, buttonText: "Get Price List →" },
+    { label: "STATUS", value: "New Launch · Phase 1 Development" },
+    {
+      label: "K-RERA NO.",
+      value: "Official Registration: PRM/KA/RERA/1250/304/PR/080526/008634",
+      isRera: true
+    }
+  ],
+  specHighlights: [
+    "Sprawling 360-Acre Township",
+    "Phase 1: 48 Acres (G+46 Floors)",
+    "120,000 Sqft Grand Clubhouse",
+    "Private Cricket Stadium",
+    "Central Plaza (1000+ Capacity)",
+    "Dedicated Pet Parks"
   ],
   highlights: [
     "Sprawling 360-acre integrated township — Phase 1: 48 acres of premium development.",
