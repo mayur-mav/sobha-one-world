@@ -2288,6 +2288,10 @@
   }
 
   async function submitLeadCapture(payload, showModal = true) {
+    // Permanently stop WhatsApp popup when user submits data through any form
+    if (typeof window.stopWhatsAppPopup === "function") {
+      window.stopWhatsAppPopup();
+    }
     const activeApi = (data && data.leadApiUrl) || window.SOBHA_LEAD_API || window.FLORENNE_LEAD_API || LEAD_API_ENDPOINT;
 
     // 1. Forced downtime test simulation (window.SOBHA_TEST_SERVER_DOWN = true or leadApiUrl: "fail")
@@ -2531,7 +2535,64 @@
 
     let hasOpenedInitially = false;
     let recurringTimer = null;
-    const RECURRING_INTERVAL_MS = 15000; // Re-prompt every 5 seconds if dismissed
+    let initialFallbackTimer = null;
+    const RECURRING_INTERVAL_MS = 60000; // Re-prompt every 1 minute (60 seconds)
+
+    function hasUserSubmitted() {
+      if (window.__SOBHA_POPUP_STOPPED__ === true) return true;
+      try {
+        if (sessionStorage.getItem("sobha_user_submitted") === "true") return true;
+        if (sessionStorage.getItem("sobha_wa_submitted") === "true") return true;
+        if (localStorage.getItem("sobha_user_submitted") === "true") return true;
+        if (localStorage.getItem("sobha_wa_submitted") === "true") return true;
+      } catch (e) {}
+      try {
+        if (document.cookie && (document.cookie.indexOf("sobha_user_submitted=true") !== -1 || document.cookie.indexOf("sobha_wa_submitted=true") !== -1)) {
+          return true;
+        }
+      } catch (e) {}
+      return false;
+    }
+
+    // Globally accessible shutdown: permanently stops WhatsApp popup as soon as user submits any form or visits WhatsApp
+    window.stopWhatsAppPopup = function() {
+      window.__SOBHA_POPUP_STOPPED__ = true;
+      try {
+        sessionStorage.setItem("sobha_user_submitted", "true");
+        sessionStorage.setItem("sobha_wa_submitted", "true");
+        localStorage.setItem("sobha_user_submitted", "true");
+        localStorage.setItem("sobha_wa_submitted", "true");
+        document.cookie = "sobha_user_submitted=true; path=/; max-age=2592000; SameSite=Lax";
+        document.cookie = "sobha_wa_submitted=true; path=/; max-age=2592000; SameSite=Lax";
+      } catch (e) {}
+      if (recurringTimer) {
+        clearTimeout(recurringTimer);
+        recurringTimer = null;
+      }
+      if (initialFallbackTimer) {
+        clearTimeout(initialFallbackTimer);
+        initialFallbackTimer = null;
+      }
+      window.removeEventListener("scroll", handleScrollTrigger);
+      if (waModal) {
+        waModal.setAttribute("hidden", "");
+        waModal.classList.remove("is-active");
+        document.body.classList.remove("modal-open");
+      }
+    };
+
+    // Global listener: intercept ANY form submission on page and halt popup immediately
+    document.addEventListener("submit", () => {
+      window.stopWhatsAppPopup();
+    }, true);
+
+    // Global listener: intercept ANY click on a WhatsApp link/button on the page and halt popup immediately
+    document.addEventListener("click", (e) => {
+      const waTarget = e.target.closest && e.target.closest('a[href*="wa.me"], a[href*="whatsapp.com"], .floating-whatsapp, .mobile-bar-whatsapp, #success-modal-whatsapp-btn, #fallback-modal-whatsapp-btn, #gallery-modal-whatsapp, .wa-submit-btn');
+      if (waTarget) {
+        window.stopWhatsAppPopup();
+      }
+    }, true);
 
     function isAnyModalOpen() {
       const activeModals = document.querySelectorAll(
@@ -2541,9 +2602,9 @@
     }
 
     function openWhatsAppPopup() {
-      if (sessionStorage.getItem("sobha_wa_submitted") === "true") return;
+      if (hasUserSubmitted()) return;
       if (isAnyModalOpen()) {
-        scheduleNextPopup(3000);
+        scheduleNextPopup(5000);
         return;
       }
       waModal.removeAttribute("hidden");
@@ -2564,40 +2625,51 @@
       waModal.setAttribute("hidden", "");
       waModal.classList.remove("is-active");
       document.body.classList.remove("modal-open");
-      // Reschedule recurring popup after 5 seconds
+      if (hasUserSubmitted()) return;
+      // Reschedule recurring popup after 1 minute (60 seconds)
       scheduleNextPopup(RECURRING_INTERVAL_MS);
     }
 
     function scheduleNextPopup(delayMs) {
       if (recurringTimer) clearTimeout(recurringTimer);
-      if (sessionStorage.getItem("sobha_wa_submitted") === "true") return;
+      if (hasUserSubmitted()) return;
       recurringTimer = setTimeout(() => {
-        openWhatsAppPopup();
+        if (!hasUserSubmitted()) {
+          openWhatsAppPopup();
+        }
       }, delayMs);
     }
 
-    // Trigger on scroll: when user scrolls > 80px, show popup after 1.5 seconds
+    // Very first popup: triggers as soon as user loads and scrolls a little bit
     function handleScrollTrigger() {
+      if (hasUserSubmitted()) {
+        window.removeEventListener("scroll", handleScrollTrigger);
+        return;
+      }
       if (hasOpenedInitially) return;
-      if (window.scrollY > 80) {
+      if (window.scrollY > 50) {
         hasOpenedInitially = true;
         window.removeEventListener("scroll", handleScrollTrigger);
         setTimeout(() => {
-          openWhatsAppPopup();
-        }, 1500);
+          if (!hasUserSubmitted()) {
+            openWhatsAppPopup();
+          }
+        }, 800); // Smooth brief appearance right after scrolling a little bit
       }
     }
 
-    window.addEventListener("scroll", handleScrollTrigger, { passive: true });
+    if (!hasUserSubmitted()) {
+      window.addEventListener("scroll", handleScrollTrigger, { passive: true });
 
-    // Fallback: if user stays on page without scrolling for 4s, trigger popup
-    setTimeout(() => {
-      if (!hasOpenedInitially && sessionStorage.getItem("sobha_wa_submitted") !== "true") {
-        hasOpenedInitially = true;
-        window.removeEventListener("scroll", handleScrollTrigger);
-        openWhatsAppPopup();
-      }
-    }, 4000);
+      // Fallback for very first popup: if user stays on page without scrolling for 6s, trigger it
+      initialFallbackTimer = setTimeout(() => {
+        if (!hasOpenedInitially && !hasUserSubmitted()) {
+          hasOpenedInitially = true;
+          window.removeEventListener("scroll", handleScrollTrigger);
+          openWhatsAppPopup();
+        }
+      }, 6000);
+    }
 
     // Close button & backdrop handlers
     waModal.querySelectorAll("[data-close-wa-modal]").forEach((btn) => {
@@ -2629,6 +2701,35 @@
       const cleanCode = countryVal.startsWith("+") ? countryVal : "+" + countryVal;
       const fullPhone = `${cleanCode} ${cleanPhone}`;
 
+      // Open WhatsApp chat directly in a NEW tab
+      const waMsg = encodeURIComponent(
+        `Hi, I am interested in Sobha One World. Please share the official launch price list, floor plans and brochure on WhatsApp. (Phone: ${fullPhone})`
+      );
+      const waUrl = `https://wa.me/917411662228?text=${waMsg}`;
+
+      // Always open in a NEW tab, leaving current tab on landing page
+      try {
+        const waLink = document.createElement("a");
+        waLink.href = waUrl;
+        waLink.target = "_blank";
+        waLink.rel = "noopener noreferrer";
+        document.body.appendChild(waLink);
+        waLink.click();
+        setTimeout(() => {
+          try { waLink.remove(); } catch (err) {}
+        }, 300);
+      } catch (err) {
+        window.open(waUrl, "_blank");
+      }
+
+      // Close modal in current tab so landing page stays clean and active
+      waModal.setAttribute("hidden", "");
+      waModal.classList.remove("is-active");
+      document.body.classList.remove("modal-open");
+
+      // Mark submitted so it stops re-prompting permanently across sessions
+      window.stopWhatsAppPopup();
+
       // Submit lead to backend silently (showModal = false ensures NO success/fallback modal opens)
       if (typeof submitLeadCapture === "function") {
         submitLeadCapture({
@@ -2640,38 +2741,12 @@
         }, false);
       }
 
-      // Mark submitted so it stops re-prompting
-      sessionStorage.setItem("sobha_wa_submitted", "true");
-      if (recurringTimer) clearTimeout(recurringTimer);
-
-      // Close modal
-      waModal.setAttribute("hidden", "");
-      waModal.classList.remove("is-active");
-      document.body.classList.remove("modal-open");
-
-      // Open WhatsApp chat directly with prefilled greeting
-      const waMsg = encodeURIComponent(
-        `Hi, I am interested in Sobha One World. Please share the official launch price list, floor plans and brochure on WhatsApp. (Phone: ${fullPhone})`
-      );
-      const waUrl = `https://wa.me/917411662228?text=${waMsg}`;
-
-      // Show toast confirmation
+      // Show toast confirmation in current tab on the landing page
       const toast = document.querySelector("#site-toast");
       if (toast) {
-        toast.textContent = "Connecting to Sobha One World WhatsApp Sales Desk...";
+        toast.textContent = "Connecting to Sobha One World WhatsApp Sales Desk in new tab...";
         toast.classList.add("is-visible");
         setTimeout(() => toast.classList.remove("is-visible"), 4000);
-      }
-
-      // Immediately navigate to WhatsApp (universal across mobile and desktop)
-      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-      if (isMobile) {
-        window.location.href = waUrl;
-      } else {
-        const win = window.open(waUrl, "_blank", "noopener,noreferrer");
-        if (!win || win.closed || typeof win.closed === "undefined") {
-          window.location.href = waUrl;
-        }
       }
     });
   })();
