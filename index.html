@@ -32,7 +32,7 @@
         }
       })();
     </script>
-    <link rel="stylesheet" href="styles.css?v=39.0">
+    <link rel="stylesheet" href="styles.css?v=41.0">
     <style>
       /* Guaranteed mobile overrides: eliminates hero form and ensures background image visibility */
       @media (max-width: 768px) {
@@ -56,9 +56,9 @@
         }
       }
     </style>
-    <script src="data.js?v=39.0" defer></script>
+    <script src="data.js?v=41.0" defer></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
-    <script src="script.js?v=39.0" defer></script>
+    <script src="script.js?v=41.0" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -105,13 +105,48 @@
         <div class="hero-shade"></div>
         <div class="hero-content page-width">
           <div class="hero-copy">
-            <h1 id="hero-title" class="hero-title">
-              <span class="hero-brand-name">Sobha One World</span>
-              <hr />
-              <span class="hero-title-highlight"><span class="hero-gold-text">400 Acres</span> Township</span>
-              <hr />
-              <span class="hero-title-highlight"><span class="hero-gold-text">90 Diameter</span><br /> Cricket Ground</span>
-            </h1>
+            <!-- Brand title matching creative -->
+            <div class="hero-brand-block">
+              <span class="hero-brand-prefix">SOBHA</span>
+              <h1 id="hero-title" class="hero-brand-main">ONE WORLD</h1>
+              <div class="hero-brand-loc">
+                <span class="hero-loc-line" aria-hidden="true"></span>
+                <span class="hero-loc-text">HOSKOTE, BANGALORE</span>
+                <span class="hero-loc-line" aria-hidden="true"></span>
+              </div>
+            </div>
+
+            <!-- Two Highlighted Feature Boxes (Exact match to screenshot without starting price) -->
+            <div class="hero-feature-cards">
+              <div class="hero-feature-card">
+                <div class="hero-feature-icon-wrap" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#dfb76c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <ellipse cx="12" cy="12" rx="4" ry="6.5"/>
+                    <line x1="12" y1="8" x2="12" y2="16"/>
+                  </svg>
+                </div>
+                <div class="hero-feature-text">
+                  <strong class="hero-feature-gold">90 Diameter</strong>
+                  <span class="hero-feature-title">Cricket Ground</span>
+                </div>
+              </div>
+
+              <div class="hero-feature-card">
+                <div class="hero-feature-icon-wrap" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#dfb76c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="7" height="7" rx="1.5"/>
+                    <rect x="14" y="3" width="7" height="7" rx="1.5"/>
+                    <rect x="14" y="14" width="7" height="7" rx="1.5"/>
+                    <rect x="3" y="14" width="7" height="7" rx="1.5"/>
+                  </svg>
+                </div>
+                <div class="hero-feature-text">
+                  <strong class="hero-feature-gold">400 Acre</strong>
+                  <span class="hero-feature-title">Township</span>
+                </div>
+              </div>
+            </div>
 
             <div class="hero-mobile-call-strip" aria-label="Direct sales contact">
               <a href="tel:+917411662228" class="hero-call-action" aria-label="Call Sobha One World Sales at +91 74116 62228">
