@@ -32,7 +32,7 @@
         }
       })();
     </script>
-    <link rel="stylesheet" href="styles.css?v=41.0">
+    <link rel="stylesheet" href="styles.css?v=43.0">
     <style>
       /* Guaranteed mobile overrides: eliminates hero form and ensures background image visibility */
       @media (max-width: 768px) {
@@ -58,7 +58,7 @@
     </style>
     <script src="data.js?v=41.0" defer></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
-    <script src="script.js?v=42.0" defer></script>
+    <script src="script.js?v=44.0" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -177,7 +177,7 @@
 
             <div class="form-field form-field-name">
               <label class="form-label" for="hero-name">NAME</label>
-              <input id="hero-name" name="name" type="text" autocomplete="name" placeholder="Your name">
+              <input id="hero-name" name="name" type="text" autocomplete="name" placeholder="Your name" required minlength="2">
             </div>
 
             <div class="form-field form-field-phone">

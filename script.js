@@ -227,7 +227,7 @@
 
     const floorplanPanel = document.querySelector("#floorplan-panel");
     if (floorplanTabs && floorplanPanel) {
-      const showFloorplan = (index) => {
+      const showFloorplan = (index, userInitiated = false) => {
         const plan = data.floorPlans[index];
         if (!plan) return;
         floorplanTabs.querySelectorAll('[role="tab"]').forEach((tab, tabIndex) => {
@@ -235,9 +235,15 @@
           tab.setAttribute("aria-selected", String(isActive));
           tab.setAttribute("tabindex", isActive ? "0" : "-1");
           tab.classList.toggle("is-active", isActive);
-          if (isActive && typeof tab.scrollIntoView === "function") {
+          if (userInitiated && isActive && floorplanTabs) {
             try {
-              tab.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+              const tabLeft = tab.offsetLeft;
+              const tabWidth = tab.offsetWidth;
+              const containerWidth = floorplanTabs.clientWidth;
+              floorplanTabs.scrollTo({
+                left: tabLeft - (containerWidth / 2) + (tabWidth / 2),
+                behavior: "smooth"
+              });
             } catch (err) {}
           }
         });
@@ -317,11 +323,11 @@
         `;
       };
 
-      showFloorplan(0);
+      showFloorplan(0, false);
 
       floorplanTabs.addEventListener("click", (event) => {
         const tab = event.target.closest("[data-floorplan-index]");
-        if (tab) showFloorplan(Number(tab.dataset.floorplanIndex));
+        if (tab) showFloorplan(Number(tab.dataset.floorplanIndex), true);
       });
 
       floorplanTabs.addEventListener("keydown", (event) => {
@@ -333,7 +339,7 @@
         const target = floorplanTabs.querySelector(`[data-floorplan-index="${next}"]`);
         if (target) {
           target.focus();
-          showFloorplan(next);
+          showFloorplan(next, true);
         }
       });
     }
@@ -1295,15 +1301,26 @@
       if (value && control.validity.typeMismatch) return "Enter a valid email address.";
       return "";
     }
+    if (control.name === "name") {
+      if ((control.required || control.id === "hero-name") && !value) {
+        return "Please enter your name.";
+      }
+      if (value) {
+        if (value.length < 2) {
+          return "Enter at least 2 characters.";
+        }
+        if (!/^[a-zA-Z\s.'-]+$/.test(value)) {
+          return "Please enter a valid name using letters only.";
+        }
+      }
+      return "";
+    }
     if (control.required && !value) {
       if (control.tagName === "SELECT") {
         const label = getFieldLabel(control);
         return `Please select ${label === "looking for" ? "a home type" : `your ${label}`}.`;
       }
       return `Please enter your ${getFieldLabel(control)}.`;
-    }
-    if (control.name === "name" && value && value.length < 2) {
-      return "Enter at least 2 characters.";
     }
     return "";
   };
@@ -1494,6 +1511,11 @@
       });
       control.addEventListener("change", () => {
         if (control.getAttribute("aria-invalid") === "true") validateControl(control);
+      });
+      control.addEventListener("blur", () => {
+        if (control.value.trim() || control.required || control.getAttribute("aria-invalid") === "true") {
+          validateControl(control);
+        }
       });
     });
     form.addEventListener("reset", () => {
