@@ -2536,7 +2536,7 @@
     let hasOpenedInitially = false;
     let recurringTimer = null;
     let initialFallbackTimer = null;
-    const RECURRING_INTERVAL_MS = 60000; // Re-prompt every 1 minute (60 seconds)
+    const RECURRING_INTERVAL_MS = 10000; // Re-prompt every 10 seconds
 
     function hasUserSubmitted() {
       if (window.__SOBHA_POPUP_STOPPED__ === true) return true;
@@ -2626,7 +2626,7 @@
       waModal.classList.remove("is-active");
       document.body.classList.remove("modal-open");
       if (hasUserSubmitted()) return;
-      // Reschedule recurring popup after 1 minute (60 seconds)
+      // Reschedule recurring popup after 10 seconds
       scheduleNextPopup(RECURRING_INTERVAL_MS);
     }
 
